@@ -1,22 +1,16 @@
+Ontwikkelomgeving voor imgeo-3d
+
+
+- Eerste iteratie: 3D ontwikkelprincipes voor het object Pand.
+
+
+
+
 ## ReSpec template instructies
 
 ReSpec is een tool om HTML- en PDF-documenten te genereren op basis van markdowncontent. Deze template helpt je bij het opstellen en publiceren van documenten volgens de Geonovum-standaard.
 
 De dynamische voorbeeldpagina van het template is [hier te bekijken](https://geonovum.github.io/NL-ReSpec-GN-template/).
-
----
-
-## Starten
-
-Gebruik de knop [*Gebruik deze template*](https://github.com/Geonovum/NL-ReSpec-template/generate?description=Geonovum+documenttemplate) om een nieuwe repository aan te maken:
-
-* **Owner:** kies `Geonovum` als je daar rechten voor hebt.
-* **Visibility:** kies **Public**.
-
-> ℹ️ Na het aanmaken moet je **handmatig GitHub Pages activeren** in de instellingen van je nieuwe repository:
->
-> * Ga naar `Settings` → `Pages`
-> * Kies onder “Source” de branch `main` en map `/ (root)`
 
 ---
 
