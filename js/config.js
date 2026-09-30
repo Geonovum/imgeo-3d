@@ -3,20 +3,20 @@ let respecConfig = {
   useLabel: true,
 
   // TODO: title is verplicht! Neem hieronder de titel van het document op
-  title: "Geonovum template voor ReSpec",
+  title: "IMGeo-3D",
   //-- specStatus is verplicht! (activeer 1 van de volgende)
-  // specStatus: "wv",                 // Werkversie
+  specStatus: "wv",                 // Werkversie
   //specStatus: "cv",               // Consultatieversie
   //specStatus: "vv",               // Versie ter vaststelling
   //specStatus: "def",              // Vastgestelde versie
-  specStatus: "basis",            // Basis Document
+  //specStatus: "basis",            // Basis Document
 
   //-- specType is verplicht bij alle andere dan BASIS
   //specType: "NO",                 // Norm
-  //specType: "ST",                 // Standaard
+  specType: "ST",                 // Standaard
   //specType: "IM",                 // Informatie Model
   //specType: "PR",                 // Praktijkrichtlijn
-  specType: "HR",                   // HandReiking
+  //specType: "HR",                   // HandReiking
   //specType: "WA",                 // Werkafspraak
   //specType: "BD",                 // Beheer Documentatie
   //specType: "AL",                 // Algemeen document
@@ -25,7 +25,7 @@ let respecConfig = {
   //-- pubDomain is verplicht! (komt in de URL)
   //-- zie: https://geonovum.github.io/handleiding-tooling/ReSpec/#pubdomain
   //-- TODO: vul pubDomain in
-  pubDomain: "3dbv",
+  pubDomain: "imgeo-3d",
 
   //-- license: voor de geldende gebruiksvoorwaarden. Default is cc-by.
   //license: "cc-by-nd",            // bronvermelding, geen afgeleide werken (default)
@@ -34,7 +34,7 @@ let respecConfig = {
 
   //-- TODO shortName is verplicht! (komt in de URL: kies logische afkorting)
   //-- Regel: shortName mag geen hoofdletters bevatten.
-  shortName: "nl-respec-template",
+  shortName: "imgeo-3d",
   
   //edDraftURI = De URI van de draft version. Deze wordt automatisch afgeleid van de github URI; maar kan hier overschreven worden. 
 	//edDraftURI: ["https://geonovum.github.io", "/", "shortName"],
@@ -69,7 +69,7 @@ let respecConfig = {
   authors:
     [
       {
-        name: "voornaam achternaam",
+        name: "Rolf Jonker",
         company: "Geonovum",
         companyURL: "https://www.geonovum.nl",
       }
@@ -78,7 +78,7 @@ let respecConfig = {
   // TODO: Vul de github URL in.
   // neem hier de URL van de github repository op waar het respec document in staat
   // dit zorgt voor het 'Doe mee:' onderdeel in het voorblad van de publicatie.
-  github: "https://github.com/Geonovum/NL-ReSpec-template",
+  github: "https://github.com/Geonovum/imgeo-3d",
 
   postProcess: [
     ...(organisationConfig.postProcess ?? []),
@@ -110,7 +110,35 @@ let respecConfig = {
       status: "Definitief",
       publisher: "Geonovum",
       date: "2024-06-13"
-    }
+    },
+    BGT12: {
+      id: "BGT12",
+      title: "Basisregistratie Grootschalige Topografie Gegegevenscatalogus BGT 1.2",
+      href: "https://docs.geostandaarden.nl/imgeo/def-im-BGT-20200701/",
+      status: "Definitief",
+      publisher: "Geonovum",
+      date: "2020-07-01"
+    },
+    IMGEO22: {
+      id: "IMGEO22",
+      title: "Basisregistratie Grootschalige Topografie Gegevenscatalogus IMGeo 2.2",
+      href: "https://docs.geostandaarden.nl/imgeo/def-im-IMGeo-20200701/",
+      status: "Definitief",
+      publisher: "Geonovum",
+      date: "2020-07-01"
+    },
+    Biljecki16c: {
+    id: "Biljecki16c",
+    title: "An improved LOD specification for 3D building models",
+    authors: [
+      "Filip Biljecki",
+      "Hugo Ledoux",
+      "Jantien Stoter"
+    ],
+    publisher: "Computers, Environment and Urban Systems",
+    date: "2016",
+    href: "https://doi.org/10.1016/j.compenvurbsys.2016.04.005"
+  }
   }
 };
 

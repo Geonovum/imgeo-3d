@@ -3,19 +3,6 @@
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 37.2.0">
 <style>
-.issue-label{text-transform:initial}
-.warning>p:first-child{margin-top:0}
-.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
-span.warning{padding:.1em .5em .15em}
-.issue.closed span.issue-number{text-decoration:line-through}
-.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
-.warning{border-color:#f11;border-color:var(--warning-border,#f11);border-width:.2em;border-style:solid;background:#fbe9e9;background:var(--warning-bg,#fbe9e9);color:#000;color:var(--text,#000)}
-.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
-li.task-list-item{list-style:none}
-input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
-.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
-</style>
-<style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
 .dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
@@ -45,7 +32,7 @@ dfn{cursor:pointer}
 
   
   
-<title>Geonovum template voor ReSpec</title>
+<title>IMGeo-3D</title>
 
   
   
@@ -126,51 +113,6 @@ ul.index code{color:inherit}
 </style>
 <meta name="description" content="TODO: vul in abstract.md een abstract in.">
 <style>
-.hljs,body:has(input[name=color-scheme][value=light]:checked) .hljs,head:not(:has(meta[name=color-scheme][content~=dark]))+body .hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
-@media (prefers-color-scheme:dark){
-.hljs{
-  --base: #282c34;
-  --mono-1: #abb2bf;
-  --mono-2: #818896;
-  --mono-3: #5c6370;
-  --hue-1: #56b6c2;
-  --hue-2: #61aeee;
-  --hue-3: #c678dd;
-  --hue-4: #98c379;
-  --hue-5: #e06c75;
-  --hue-5-2: #be5046;
-  --hue-6: #d19a66;
-  --hue-6-2: #e6c07b;
-}
-}
-body:has(input[name=color-scheme][value=dark]:checked) .hljs{
-  --base: #282c34;
-  --mono-1: #abb2bf;
-  --mono-2: #818896;
-  --mono-3: #5c6370;
-  --hue-1: #56b6c2;
-  --hue-2: #61aeee;
-  --hue-3: #c678dd;
-  --hue-4: #98c379;
-  --hue-5: #e06c75;
-  --hue-5-2: #be5046;
-  --hue-6: #d19a66;
-  --hue-6-2: #e6c07b;
-}
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;color:var(--mono-1,#383a42);background:#fafafa;background:var(--base,#fafafa)}
-.hljs-comment,.hljs-quote{color:#717277;color:var(--mono-3,#717277);font-style:italic}
-.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4;color:var(--hue-3,#a626a4)}
-.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;color:var(--hue-5,#ca4706);font-weight:700}
-.hljs-literal{color:#0b76c5;color:var(--hue-1,#0b76c5)}
-.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c;color:var(--hue-4,#42803c)}
-.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01;color:var(--hue-6-2,#9a6a01)}
-.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801;color:var(--hue-6,#986801)}
-.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3;color:var(--hue-2,#336ae3)}
-.hljs-emphasis{font-style:italic}
-.hljs-strong{font-weight:700}
-.hljs-link{text-decoration:underline}
-</style>
-<style>
 
   .sidelabel {
     position: fixed;
@@ -182,7 +124,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
     color: white;
     white-space: nowrap;
     z-index: 1;
-    background-color: #80CC28;
+    background-color: #FF0000;
   }
 </style>
 <script type="text/javascript">
@@ -338,8 +280,7 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
       "authors": [
         "T. Preston-Werner"
       ],
-      "date": "June 2013",
-      "id": "semver"
+      "date": "June 2013"
     },
     "MIM12": {
       "id": "MIM12",
@@ -1395,13 +1336,41 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
       "editors": "T. Kralidis",
       "date": "2008-03-14",
       "id": "WMCC11"
+    },
+    "BGT12": {
+      "id": "BGT12",
+      "title": "Basisregistratie Grootschalige Topografie Gegegevenscatalogus BGT 1.2",
+      "href": "https://docs.geostandaarden.nl/imgeo/def-im-BGT-20200701/",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "date": "2020-07-01"
+    },
+    "IMGEO22": {
+      "id": "IMGEO22",
+      "title": "Basisregistratie Grootschalige Topografie Gegevenscatalogus IMGeo 2.2",
+      "href": "https://docs.geostandaarden.nl/imgeo/def-im-IMGeo-20200701/",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "date": "2020-07-01"
+    },
+    "Biljecki16c": {
+      "id": "Biljecki16c",
+      "title": "An improved LOD specification for 3D building models",
+      "authors": [
+        "Filip Biljecki",
+        "Hugo Ledoux",
+        "Jantien Stoter"
+      ],
+      "publisher": "Computers, Environment and Urban Systems",
+      "date": "2016",
+      "href": "https://doi.org/10.1016/j.compenvurbsys.2016.04.005"
     }
   },
-  "title": "Geonovum template voor ReSpec",
-  "specStatus": "basis",
-  "specType": "HR",
-  "pubDomain": "3dbv",
-  "shortName": "nl-respec-template",
+  "title": "IMGeo-3D",
+  "specStatus": "wv",
+  "specType": "ST",
+  "pubDomain": "imgeo-3d",
+  "shortName": "imgeo-3d",
   "publishDate": "2026-02-09",
   "publishVersion": [],
   "editors": [
@@ -1413,32 +1382,32 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
   ],
   "authors": [
     {
-      "name": "voornaam achternaam",
+      "name": "Rolf Jonker",
       "company": "Geonovum",
       "companyURL": "https://www.geonovum.nl"
     }
   ],
-  "github": "https://github.com/Geonovum/NL-ReSpec-template"
+  "github": "https://github.com/Geonovum/imgeo-3d"
 }</script>
 <link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
 <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.geonovum.nl/geo-standaarden"><img alt="Geonovum" height="67" id="Geonovum" src="https://docs.geostandaarden.nl/media/Geonovum.svg" width="132">
-  </a> <h1 id="title" class="title">Geonovum template voor ReSpec</h1>
+  </a> <h1 id="title" class="title">IMGeo-3D</h1>
     
     <h2>
-      Geonovum Handreiking<br>
-      Document
-      <time class="dt-published" datetime="2026-02-09">09 februari 2026</time>
+      Geonovum Standaard<br>
+      Werkversie
+      <time class="dt-published" datetime="2026-02-09">30 september 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://docs.geostandaarden.nl/3dbv/basis-hr-nl-respec-template-20260209">https://docs.geostandaarden.nl/3dbv/basis-hr-nl-respec-template-20260209</a>
+              <a class="u-url status" href="https://geonovum.github.io/imgeo-3d/">https://geonovum.github.io/imgeo-3d/</a>
             </dd>
       <dt>Laatst gepubliceerde versie:</dt><dd>
-              <a href="https://docs.geostandaarden.nl/3dbv/nl-respec-template/">https://docs.geostandaarden.nl/3dbv/nl-respec-template/</a>
+              <a href="https://docs.geostandaarden.nl/imgeo-3d/imgeo-3d/">https://docs.geostandaarden.nl/imgeo-3d/imgeo-3d/</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://geonovum.github.io/NL-ReSpec-template/">https://geonovum.github.io/NL-ReSpec-template/</a></dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://geonovum.github.io/imgeo-3d/">https://geonovum.github.io/imgeo-3d/</a></dd>
       
       
       
@@ -1450,18 +1419,18 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
   </dd>
       
       <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">voornaam achternaam</span> (<a class="p-org org h-org" href="https://www.geonovum.nl">Geonovum</a>)
+    <span class="p-name fn">Rolf Jonker</span> (<a class="p-org org h-org" href="https://www.geonovum.nl">Geonovum</a>)
   </dd>
       <dt>Doe mee:</dt><dd>
-    <a href="https://github.com/Geonovum/NL-ReSpec-template/">GitHub Geonovum/NL-ReSpec-template</a>
+    <a href="https://github.com/Geonovum/imgeo-3d/">GitHub Geonovum/imgeo-3d</a>
   </dd><dd>
-    <a href="https://github.com/Geonovum/NL-ReSpec-template/issues/">Alle issues</a>
+    <a href="https://github.com/Geonovum/imgeo-3d/issues/">Alle issues</a>
   </dd><dd>
-    <a href="https://github.com/Geonovum/NL-ReSpec-template/issues/new/choose">Dien een melding in</a>
+    <a href="https://github.com/Geonovum/imgeo-3d/issues/new/choose">Dien een melding in</a>
   </dd><dd>
-    <a href="https://github.com/Geonovum/NL-ReSpec-template/commits/">Revisiehistorie</a>
+    <a href="https://github.com/Geonovum/imgeo-3d/commits/">Revisiehistorie</a>
   </dd><dd>
-    <a href="https://github.com/Geonovum/NL-ReSpec-template/pulls/">Pull requests</a>
+    <a href="https://github.com/Geonovum/imgeo-3d/pulls/">Pull requests</a>
   </dd>
     </dl>
     
@@ -1476,68 +1445,108 @@ body:has(input[name=color-scheme][value=dark]:checked) .hljs{
 
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>TODO: vul in abstract.md een abstract in.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een document zonder officiële status.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#niet-normatieve-deel"><bdi class="secno">1. </bdi>Niet-normatieve deel</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#een-subparagraaf"><bdi class="secno">1.1 </bdi>Een subparagraaf</a></li></ol></li><li class="tocline"><a class="tocxref" href="#meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#definities"><bdi class="secno">2.1 </bdi>Definities</a></li><li class="tocline"><a class="tocxref" href="#afbeeldingen"><bdi class="secno">2.2 </bdi>Afbeeldingen</a></li><li class="tocline"><a class="tocxref" href="#referenties"><bdi class="secno">2.3 </bdi>Referenties</a></li><li class="tocline"><a class="tocxref" href="#optioneel"><bdi class="secno">2.4 </bdi>Optioneel</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mermaid-diagram"><bdi class="secno">3. </bdi>Mermaid diagram</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">4. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">5. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#ontwerpprincipes"><bdi class="secno">2. </bdi>Ontwerpprincipes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#topografie"><bdi class="secno">2.1 </bdi>Topografie</a></li><li class="tocline"><a class="tocxref" href="#schaalbereik"><bdi class="secno">2.2 </bdi>Schaalbereik</a></li><li class="tocline"><a class="tocxref" href="#reele-en-virtuele-objecten"><bdi class="secno">2.3 </bdi>Reële en virtuele objecten</a></li><li class="tocline"><a class="tocxref" href="#x3d-dekking"><bdi class="secno">2.4 </bdi>3D Dekking</a></li><li class="tocline"><a class="tocxref" href="#imgeo-objecten-in-de-bgt"><bdi class="secno">2.5 </bdi>IMGeo-objecten in de BGT</a></li><li class="tocline"><a class="tocxref" href="#modellering"><bdi class="secno">2.6 </bdi>Modellering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-detail-lod"><bdi class="secno">2.6.1 </bdi>Level Of Detail (LOD)</a></li><li class="tocline"><a class="tocxref" href="#niveau-van-semantishe-decompositie"><bdi class="secno">2.6.2 </bdi>Niveau van Semantishe Decompositie</a></li><li class="tocline"><a class="tocxref" href="#x3d-coordinaten"><bdi class="secno">2.6.3 </bdi>3D Coordinaten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geen-inhoud-van-de-bgt-macro-objecten"><bdi class="secno">2.7 </bdi>Geen inhoud van de BGT: macro-objecten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-definities-en-afkortingen"><bdi class="secno">A. </bdi>Bijlage A: Definities en Afkortingen</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">B. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">C. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">D. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">D.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">D.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">E.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">E.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
 
 
-<section class="informative" id="niet-normatieve-deel"><div class="header-wrapper"><h2 id="x1-niet-normatieve-deel"><bdi class="secno">1. </bdi>Niet-normatieve deel</h2><a class="self-link" href="#niet-normatieve-deel" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet-normatief.</em></p>
-<p>Bijvoorbeeld een introductie is niet normatief.</p>
-<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Noot</span><span class="issue-label">: index</span></div><p class="">
-Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config.js</code>.
-</p></div><section id="een-subparagraaf"><div class="header-wrapper"><h3 id="x1-1-een-subparagraaf"><bdi class="secno">1.1 </bdi>Een subparagraaf</h3><a class="self-link" href="#een-subparagraaf" aria-label="Permalink for Section 1.1"></a></div>
-<p>Hier staat een tabel. Als de juiste style gekozen is ziet deze er goed uit.</p>
-<table>
-<thead>
-<tr>
-<th>Sleutel</th>
-<th>Waarde</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>key</td>
-<td>Deze waarde bevat een lange tekst zodat te zien is of de kolombreedte dynamisch wordt bepaald</td>
-</tr>
-</tbody></table>
-</section></section>
-<section id="meer-inhoud"><div class="header-wrapper"><h2 id="x2-meer-inhoud"><bdi class="secno">2. </bdi>Meer inhoud</h2><a class="self-link" href="#meer-inhoud" aria-label="Permalink for Section 2."></a></div>
-<section id="definities"><div class="header-wrapper"><h3 id="x2-1-definities"><bdi class="secno">2.1 </bdi>Definities</h3><a class="self-link" href="#definities" aria-label="Permalink for Section 2.1"></a></div>
-<p><dfn id="dfn-definitie" tabindex="0" aria-haspopup="dialog">Definitie</dfn>: Een definitie is een beschrijving van een woord. Een ander woord voor <em>definitie</em> is betekenis of beschrijving.</p>
-</section><section id="afbeeldingen"><div class="header-wrapper"><h3 id="x2-2-afbeeldingen"><bdi class="secno">2.2 </bdi>Afbeeldingen</h3><a class="self-link" href="#afbeeldingen" aria-label="Permalink for Section 2.2"></a></div>
-<p>Afbeeldingen krijgen een nummer en vermelding in de figurenlijst <a href="#tof" data-matched-text="[[[#tof]]]" class="sec-ref"><bdi class="secno">5. </bdi>Lijst met figuren</a>.</p>
+<section class="informative" id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet-normatief.</em></p>
+<p>Deze gegevenscatalogus beschrijft de 3D-uitbreiding van IMGeo. Voor de achtergrond, ontwikkeling, positionering en opbouw van de BGT en IMGEO wordt verwezen naar de inleiding van de bestaande gegevenscatalogus [<cite><a class="bibref" data-link-type="biblio" href="#bib-bgt12" title="Basisregistratie Grootschalige Topografie Gegegevenscatalogus BGT 1.2">BGT12</a></cite>] en gegevenscatalogus [<cite><a class="bibref" data-link-type="biblio" href="#bib-imgeo22" title="Basisregistratie Grootschalige Topografie Gegevenscatalogus IMGeo 2.2">IMGEO22</a></cite>]. Ook wordt gebruik gemaakt van het dynamisch document <a href="https://geonovum.github.io/IMGeo-objectenhandboek/">IMGEO-objectenhandboek</a> </p>
+<p>De 3D-uitbreiding sluit inhoudelijk aan op de bestaande IMGeo-standaard en bouwt voort op de daarin vastgelegde objecten, definities en afspraken. Waar mogelijk worden bestaande afspraken ongewijzigd overgenomen. Alleen waar de toepassing in 3D daarom vraagt, worden deze aangevuld of nader gespecificeerd. De 3D uitbreiding maakt gebruik van de [<cite><a class="bibref" data-link-type="biblio" href="#bib-citygml3" title="OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0">CityGML3</a></cite>]</p>
+<p>De 3D-afspraken vormen daarmee een uitbreiding op de bestaande 2D-standaard en moeten in samenhang met de bestaande gegevenscatalogus worden gelezen. Bij verschillen tussen de 2D- en 3D-afspraken zijn de in deze gegevenscatalogus opgenomen 3D-afspraken van toepassing voor een 3D-toepassing.</p>
+</section>
+<section id="ontwerpprincipes"><div class="header-wrapper"><h2 id="x2-ontwerpprincipes"><bdi class="secno">2. </bdi>Ontwerpprincipes</h2><a class="self-link" href="#ontwerpprincipes" aria-label="Permalink for Section 2."></a></div>
+<p>Voor de inhoud van de IMGeo-3D zijn de volgende ontwerpprincipes gehanteerd.</p>
+<section id="topografie"><div class="header-wrapper"><h3 id="x2-1-topografie"><bdi class="secno">2.1 </bdi>Topografie</h3><a class="self-link" href="#topografie" aria-label="Permalink for Section 2.1"></a></div>
+<p>De IMGeo-3D bestaat uit 3D-abstracties van objecten in de werkelijkheid, gelimiteerd tot
+de be­schre­ven, fysieke en functionele, to­po­grafische objecten met een duidelijk meervoudig gebruik,
+samengevat onder de term 3D-basistopografie.</p>
+</section><section id="schaalbereik"><div class="header-wrapper"><h3 id="x2-2-schaalbereik"><bdi class="secno">2.2 </bdi>Schaalbereik</h3><a class="self-link" href="#schaalbereik" aria-label="Permalink for Section 2.2"></a></div>
+<p>De bestaande 2D-topografische gegevens zijn geschikt voor een schaalbereik van 1:500 tot 1:5.000. De IMGeo-3D voegt een derde ruimtelijke dimensie toe. Dit behoudt dezelfde schaalnauwkeurigheid.</p>
+</section><section id="reele-en-virtuele-objecten"><div class="header-wrapper"><h3 id="x2-3-reele-en-virtuele-objecten"><bdi class="secno">2.3 </bdi>Reële en virtuele objecten</h3><a class="self-link" href="#reele-en-virtuele-objecten" aria-label="Permalink for Section 2.3"></a></div>
+<p>De domeinmodellen BGT 1.2 en IMGEO 2.2 bevatten voornamelijk fysieke, concrete topografische objecten. Deze objecten zijn binnen het NEN3610-2011 raamwerk gepositioneerd. Aangezien nieuwere versies van BGT en IMGEO zich gaan baseren op NEN3610-2022 ([<cite><a class="bibref" data-link-type="biblio" href="#bib-nen3610" title="NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten">NEN3610</a></cite>]) zal deze versie ook als topmodel gebruikt worden voor IMGeo-3D. Een belangrijk verschil tussen de NEN3610:2011 en NEN3610:2022 is het onderscheid dat gemaakt is in de NEN3610:2022 tussen een <a href="https://definities.geostandaarden.nl/nen3610-2022/nl/page/reeel_object">Reëel Object</a> en een <a href="https://definities.geostandaarden.nl/nen3610-2022/nl/page/virtuele_ruimte">Virtuele ruimte</a>. Ook in CityGML 3.0 wordt een duidelijk onderscheid gemaakt in ruimte en in fysiek object dat de ruimte begrenst. Hiermee wordt het mogelijk om bijvoorbeeld asfalt (Reëel object) te modelleren als horizontale begrenzing van de onderkant van een weg (Virtuele ruimte) of daken (Reëel object) als horizontale begrenzing aan de bovenkant van een verblijfsobject (Virtuele ruimte). Het laatste voorbeeld vergt een uitbreiding van BGT/IMGEO Objecten.   </p>
 <p>
-      </p><figure id="fig-onderschrift">
-        <img src="media/Bomos_levenscyclus.svg" alt="Tekstueel alternatief voor toegankelijkheid">
-        <figcaption><a class="self-link" href="#fig-onderschrift">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Onderschrift</span></figcaption>
+      </p><figure id="fig-voorstelling-van-hoe-een-mapping-van-deels-toekomstig-bgt-en-imgeo-zou-kunnen-zijn-onder-het-nen3610-2022-raamwerk">
+        <img src="media/BGT-NEN3610-2022-mapping.png" alt="Voorstelling van objecttypen BGT en IMGEO onder de NEN3610:2022">
+        <figcaption><a class="self-link" href="#fig-voorstelling-van-hoe-een-mapping-van-deels-toekomstig-bgt-en-imgeo-zou-kunnen-zijn-onder-het-nen3610-2022-raamwerk">Figuur <bdi class="figno">1</bdi></a> <span class="fig-title">Voorstelling van hoe een mapping van (deels toekomstig) BGT en IMGEO zou kunnen zijn onder het NEN3610:2022 raamwerk</span></figcaption>
       </figure>
     <p></p>
-</section><section id="referenties"><div class="header-wrapper"><h3 id="x2-3-referenties"><bdi class="secno">2.3 </bdi>Referenties</h3><a class="self-link" href="#referenties" aria-label="Permalink for Section 2.3"></a></div>
-<p>Referenties kunnen op drie plaatsen staan:</p>
-<ul>
-<li>In SpecRef <a href="https://www.specref.org/">Specref</a></li>
-<li>In de organisatie configuraties [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>]. Deze zijn te vinden op <a href="https://github.com/Geonovum/tools.geostandaarden.nl/blob/main/tools.geostandaarden.nl/respec/config/geonovum-config.js">tools.geostandaarden.nl</a>.</li>
-<li>In het document, zoals [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>]. Deze zijn te vinden in <code>js/config.js</code>.</li>
-</ul>
-<p>Referentie uit organisatie lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-semver" title="Semantic Versioning 2.0.0">SemVer</a></cite>] of de locale lijst [<cite><a class="bibref" data-link-type="biblio" href="#bib-mim12" title="MIM - Metamodel Informatie Modellering (Versie 1.2)">MIM12</a></cite>]. Lijst staat in <code>organisation-config.js</code>. Alleen referenties die in de tekst voorkomen worden getoond.</p>
-<p>We gebruiken een <a href="#dfn-definitie" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-definitie-1">definitie</a> om een woord te omschrijven.</p>
-</section><section id="optioneel"><div class="header-wrapper"><h3 id="x2-4-optioneel"><bdi class="secno">2.4 </bdi>Optioneel</h3><a class="self-link" href="#optioneel" aria-label="Permalink for Section 2.4"></a></div>
-<p>De onderstaande secties (<em>Conformiteit</em> e.d.) zijn optioneel, zie <code>index.html</code>:</p>
-<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"abstract"</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"abstract.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sotd"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span><span class="hljs-comment">&lt;!-- Wordt automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"informative"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch01.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">data-include-format</span>=<span class="hljs-string">"markdown"</span> <span class="hljs-attr">data-include</span>=<span class="hljs-string">"ch02.md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Hieronder optionele secties. Worden automatisch gevuld --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'conformance'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tof'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"index"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-</code></pre>
+</section><section id="x3d-dekking"><div class="header-wrapper"><h3 id="x2-4-3d-dekking"><bdi class="secno">2.4 </bdi>3D Dekking</h3><a class="self-link" href="#x3d-dekking" aria-label="Permalink for Section 2.4"></a></div>
+<p>IMGeo 3D kent dezelfde dekking als IMGEO en BGT in het horizontale vlak. In het verticale vlak is de dekking zowel bovengronds als ondergronds. Deze dekking beschrijft de ruimtelijke scope van het 3D model en impliceert niet dat binnen deze gehele ruimte daadwerkelijk objecten zijn gemodelleerd.</p>
+</section><section id="imgeo-objecten-in-de-bgt"><div class="header-wrapper"><h3 id="x2-5-imgeo-objecten-in-de-bgt"><bdi class="secno">2.5 </bdi>IMGeo-objecten in de BGT</h3><a class="self-link" href="#imgeo-objecten-in-de-bgt" aria-label="Permalink for Section 2.5"></a></div>
+<p>nvt...?</p>
+</section><section id="modellering"><div class="header-wrapper"><h3 id="x2-6-modellering"><bdi class="secno">2.6 </bdi>Modellering</h3><a class="self-link" href="#modellering" aria-label="Permalink for Section 2.6"></a></div>
+<hr>
+<p>IMGeo-3D hanteert het Basismodel Geo-informatie (NEN 3610:2022) voor de
+modellering. NEN 3610:2011 conformeert zich aan de ISO 19100 standaarden voor
+geo-informatie. Deze gelden daarom ook voor de BGT.</p>
+<p>De BGT is een tweedimensionale objectenverzameling. Om de stap naar 3D op een
+later moment te kunnen maken, is het BGT-model gebaseerd op CityGML 2.0. </p>
+<p>IMGeo-3D bouwt voort op CityGML en sluit aan bij het CityGML 3.0 Conceptual Model. Daarmee wordt de bestaande relatie met CityGML voortgezet, en gebruikt het model de vernieuwde conceptuele modellering van CityGML 3.0. Het is mogelijk om bestaande CityGML 1.0 en 2.0 data up te graden naar CityGML3.0. </p>
+<section id="level-of-detail-lod"><div class="header-wrapper"><h4 id="x2-6-1-level-of-detail-lod"><bdi class="secno">2.6.1 </bdi>Level Of Detail (LOD)</h4><a class="self-link" href="#level-of-detail-lod" aria-label="Permalink for Section 2.6.1"></a></div>
+<p>Een belangrijk concept in 3D-modellering is het Level Of Detail <a href="#dfn-lod" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-lod-1">LOD</a>. Een LOD representeert daarbij een specifieke geometrische abstractie van een object in de werkelijkheid. Door deze abstracties op gestandaardiseerde wijze te definiëren, is het mogelijk om datasets op verschillende detailniveaus te gebruiken en kunnen gegevens uit verschillende bronnen beter worden gecombineerd. De LOD's zijn daarmee niet verschillende objecten, maar verschillende geometrische representaties van hetzelfde object.   </p>
+<p>Als basis voor IMGeo-3D kunnen de vier Levels of Details (LOD-0, -1, -2 en 3) van de CityGML standaard gebruikt worden.  </p>
+<p>
+      </p><figure id="fig-citygml3-0-lod-hoofdniveaus">
+        <img src="media/LOD/CityGML30_LOD.png" alt="CityGML3.0 LOD hoofdniveaus">
+        <figcaption><a class="self-link" href="#fig-citygml3-0-lod-hoofdniveaus">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">(CityGML3.0 LOD hoofdniveaus)</span></figcaption>
+      </figure>
+    <p></p>
+<p>De volgende definities worden in de CityGML specificatie gegeven voor het voorbeeld gebouw:</p>
+<table>
+  <caption> LoD van een gebouw zoals beschreven in de CityGML3.0 standaard </caption>
+  <tbody><tr>
+    <th> Level </th>
+    <th> Beschrijving </th>
+  </tr>
+  <tr>
+    <td> LoD0 </td>
+    <td> Een representatie van een gebouw of vertrek met niet volumetrische geometrie zoals een punt, vlak (polygoon) of meerdere vlakken (voor bijvoorbeeld de 'footprint' of 'roofprint'). </td>    
+  </tr>
+   <tr>
+    <td> LoD1 </td>
+    <td>  Een representatie van een gebouw of vertrek als een blok/prisma vorm. </td>    
+  </tr>
+   <tr>
+    <td> LoD2 </td>
+    <td> Een representatie van een gebouw of vertrek als een volume met (meestal) verticale muren, waarbij de vlakken die het dak representeren zijn verfijnd. </td>    
+  </tr>
+   <tr>
+    <td> LoD3 </td>
+    <td> Een representatie van een gebouw of vertrek als een schil of een collectie van constructieve elementen. Dit is de enige LoD die gevelopeningen ondersteunt. </td>    
+  </tr>
+</tbody></table><p>De documentatie van CityGML 3.0 over de LOD's is algemeen en conceptueel. Dit biedt flexibiliteit om verschillende soorten 3D-modellen binnen het CityGML-framework te modelleren, maar maakt het tegelijkertijd lastig om eenduidig vast te stellen hoe een bepaalde LOD de werkelijkheid representeert. Zo is niet altijd vastgelegd welke geometrische vereenvoudigingen moeten worden toegepast en welke onderdelen van een gebouw bij een bepaald LOD moeten worden gemodelleerd.</p>
+<p>Om hier verbetering in te brengen heeft [<cite><a class="bibref" data-link-type="biblio" href="#bib-biljecki16c" title="An improved LOD specification for 3D building models">Biljecki16c</a></cite>] in 2016 een verfijning gemaakt die voortbouwt op het toen ter tijd actuele CityGML2.0 LoD framework. Dit is gedaan door iedere CityGML LoD op te splitsen in 4 sub groepen. Zo is LoD1 opgesplitst in LoD1.0, 1.1, 1.2 en 1.3. Het eerste nummer van de verfijnde LoD komt overeen met de CityGML LoD. Het tweede nummer geeft de verdere verfijning aan. De documentatie van de verfijnde LoD is uitgebreider dan die van de CityGML standaard. </p>
+<figure id="refined-lods">
+  <img src="media/LOD/TUDeflt_Refined_LODs_for_CityGML_Buildings.png" alt="Refined LoDs for CityGML Buildings">  <figcaption><a class="self-link" href="#refined-lods">Figuur <bdi class="figno">3</bdi></a> <span class="fig-title">
+    Refined LoDs for CityGML Buildings. Bron: [<cite><a class="bibref" data-link-type="biblio" href="#bib-biljecki16c" title="An improved LOD specification for 3D building models">Biljecki16c</a></cite>].
+  </span></figcaption>
+</figure></section><section id="niveau-van-semantishe-decompositie"><div class="header-wrapper"><h4 id="x2-6-2-niveau-van-semantishe-decompositie"><bdi class="secno">2.6.2 </bdi>Niveau van Semantishe Decompositie</h4><a class="self-link" href="#niveau-van-semantishe-decompositie" aria-label="Permalink for Section 2.6.2"></a></div>
+<p>Een belangrijke verandering in CityGML 3.0 is het onderscheid tussen en het loskoppelen van Level Of Detail en semantische decompositie. Dit betekent dat het binnen de CityGML 3.0 standaard mogelijk is om een gebouw in een LOD2 te modelleren, de muren die onderdeel zijn van dit gebouw conform LOD3 en de ruimten binnen dit gebouw als LOD0.  </p>
+<p>
+      </p><figure id="fig-verschillend-lod-gebruik-in-de-semantische-decompositie-van-een-gebouw">
+        <img src="media/LOD/CityGML30_LOD_2.png" alt="Verschillend LOD gebruik in semantische decompositie gebouw">
+        <figcaption><a class="self-link" href="#fig-verschillend-lod-gebruik-in-de-semantische-decompositie-van-een-gebouw">Figuur <bdi class="figno">4</bdi></a> <span class="fig-title">(Verschillend LOD gebruik in de semantische decompositie van een gebouw)</span></figcaption>
+      </figure>
+    <p></p>
+</section><section id="x3d-coordinaten"><div class="header-wrapper"><h4 id="x2-6-3-3d-coordinaten"><bdi class="secno">2.6.3 </bdi>3D Coordinaten</h4><a class="self-link" href="#x3d-coordinaten" aria-label="Permalink for Section 2.6.3"></a></div>
+<p>Ongeacht het Level Of Detail dat gebruikt wordt voor de geometrische representatie van de objecten in de werkelijkheid zal de geometrie opgebouwd worden in driedimensionale ruimte. Dit betekent dat de geometrie (punten- lijnen - vlakken - volumes) van objecten opgesteld is met (X, Y, Z) coordinaten.   </p>
+</section></section><section id="geen-inhoud-van-de-bgt-macro-objecten"><div class="header-wrapper"><h3 id="x2-7-geen-inhoud-van-de-bgt-macro-objecten"><bdi class="secno">2.7 </bdi>Geen inhoud van de BGT: macro-objecten</h3><a class="self-link" href="#geen-inhoud-van-de-bgt-macro-objecten" aria-label="Permalink for Section 2.7"></a></div>
+<p>Geen verandering t.o.v. BGT/IMGEO.</p>
 </section></section>
-<section id="mermaid-diagram"><div class="header-wrapper"><h2 id="x3-mermaid-diagram"><bdi class="secno">3. </bdi>Mermaid diagram</h2><a class="self-link" href="#mermaid-diagram" aria-label="Permalink for Section 3."></a></div>
-<figure id="Mermaidvoorbeeld"><pre><img style="max-width: 100%; aspect-ratio: 2/1;" src="data:image/svg+xml;base64,PHN2ZyBpZD0iZGlhZ3JhbS0xIiB3aWR0aD0iMTAwJSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBjbGFzcz0iZmxvd2NoYXJ0IiBzdHlsZT0ibWF4LXdpZHRoOiAyMDguMjM0Mzc1cHg7IiB2aWV3Qm94PSIwIDAgMjA4LjIzNDM3NSAyNTciIHJvbGU9ImdyYXBoaWNzLWRvY3VtZW50IGRvY3VtZW50IiBhcmlhLXJvbGVkZXNjcmlwdGlvbj0iZmxvd2NoYXJ0LXYyIj48c3R5bGU+I2RpYWdyYW0tMXtmb250LWZhbWlseToidHJlYnVjaGV0IG1zIix2ZXJkYW5hLGFyaWFsLHNhbnMtc2VyaWY7Zm9udC1zaXplOjE2cHg7ZmlsbDojMzMzO31Aa2V5ZnJhbWVzIGVkZ2UtYW5pbWF0aW9uLWZyYW1le2Zyb217c3Ryb2tlLWRhc2hvZmZzZXQ6MDt9fUBrZXlmcmFtZXMgZGFzaHt0b3tzdHJva2UtZGFzaG9mZnNldDowO319I2RpYWdyYW0tMSAuZWRnZS1hbmltYXRpb24tc2xvd3tzdHJva2UtZGFzaGFycmF5OjksNSFpbXBvcnRhbnQ7c3Ryb2tlLWRhc2hvZmZzZXQ6OTAwO2FuaW1hdGlvbjpkYXNoIDUwcyBsaW5lYXIgaW5maW5pdGU7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7fSNkaWFncmFtLTEgLmVkZ2UtYW5pbWF0aW9uLWZhc3R7c3Ryb2tlLWRhc2hhcnJheTo5LDUhaW1wb3J0YW50O3N0cm9rZS1kYXNob2Zmc2V0OjkwMDthbmltYXRpb246ZGFzaCAyMHMgbGluZWFyIGluZmluaXRlO3N0cm9rZS1saW5lY2FwOnJvdW5kO30jZGlhZ3JhbS0xIC5lcnJvci1pY29ue2ZpbGw6IzU1MjIyMjt9I2RpYWdyYW0tMSAuZXJyb3ItdGV4dHtmaWxsOiM1NTIyMjI7c3Ryb2tlOiM1NTIyMjI7fSNkaWFncmFtLTEgLmVkZ2UtdGhpY2tuZXNzLW5vcm1hbHtzdHJva2Utd2lkdGg6MXB4O30jZGlhZ3JhbS0xIC5lZGdlLXRoaWNrbmVzcy10aGlja3tzdHJva2Utd2lkdGg6My41cHg7fSNkaWFncmFtLTEgLmVkZ2UtcGF0dGVybi1zb2xpZHtzdHJva2UtZGFzaGFycmF5OjA7fSNkaWFncmFtLTEgLmVkZ2UtdGhpY2tuZXNzLWludmlzaWJsZXtzdHJva2Utd2lkdGg6MDtmaWxsOm5vbmU7fSNkaWFncmFtLTEgLmVkZ2UtcGF0dGVybi1kYXNoZWR7c3Ryb2tlLWRhc2hhcnJheTozO30jZGlhZ3JhbS0xIC5lZGdlLXBhdHRlcm4tZG90dGVke3N0cm9rZS1kYXNoYXJyYXk6Mjt9I2RpYWdyYW0tMSAubWFya2Vye2ZpbGw6IzMzMzMzMztzdHJva2U6IzMzMzMzMzt9I2RpYWdyYW0tMSAubWFya2VyLmNyb3Nze3N0cm9rZTojMzMzMzMzO30jZGlhZ3JhbS0xIHN2Z3tmb250LWZhbWlseToidHJlYnVjaGV0IG1zIix2ZXJkYW5hLGFyaWFsLHNhbnMtc2VyaWY7Zm9udC1zaXplOjE2cHg7fSNkaWFncmFtLTEgcHttYXJnaW46MDt9I2RpYWdyYW0tMSAubGFiZWx7Zm9udC1mYW1pbHk6InRyZWJ1Y2hldCBtcyIsdmVyZGFuYSxhcmlhbCxzYW5zLXNlcmlmO2NvbG9yOiMzMzM7fSNkaWFncmFtLTEgLmNsdXN0ZXItbGFiZWwgdGV4dHtmaWxsOiMzMzM7fSNkaWFncmFtLTEgLmNsdXN0ZXItbGFiZWwgc3Bhbntjb2xvcjojMzMzO30jZGlhZ3JhbS0xIC5jbHVzdGVyLWxhYmVsIHNwYW4gcHtiYWNrZ3JvdW5kLWNvbG9yOnRyYW5zcGFyZW50O30jZGlhZ3JhbS0xIC5sYWJlbCB0ZXh0LCNkaWFncmFtLTEgc3BhbntmaWxsOiMzMzM7Y29sb3I6IzMzMzt9I2RpYWdyYW0tMSAubm9kZSByZWN0LCNkaWFncmFtLTEgLm5vZGUgY2lyY2xlLCNkaWFncmFtLTEgLm5vZGUgZWxsaXBzZSwjZGlhZ3JhbS0xIC5ub2RlIHBvbHlnb24sI2RpYWdyYW0tMSAubm9kZSBwYXRoe2ZpbGw6I0VDRUNGRjtzdHJva2U6IzkzNzBEQjtzdHJva2Utd2lkdGg6MXB4O30jZGlhZ3JhbS0xIC5yb3VnaC1ub2RlIC5sYWJlbCB0ZXh0LCNkaWFncmFtLTEgLm5vZGUgLmxhYmVsIHRleHQsI2RpYWdyYW0tMSAuaW1hZ2Utc2hhcGUgLmxhYmVsLCNkaWFncmFtLTEgLmljb24tc2hhcGUgLmxhYmVse3RleHQtYW5jaG9yOm1pZGRsZTt9I2RpYWdyYW0tMSAubm9kZSAua2F0ZXggcGF0aHtmaWxsOiMwMDA7c3Ryb2tlOiMwMDA7c3Ryb2tlLXdpZHRoOjFweDt9I2RpYWdyYW0tMSAucm91Z2gtbm9kZSAubGFiZWwsI2RpYWdyYW0tMSAubm9kZSAubGFiZWwsI2RpYWdyYW0tMSAuaW1hZ2Utc2hhcGUgLmxhYmVsLCNkaWFncmFtLTEgLmljb24tc2hhcGUgLmxhYmVse3RleHQtYWxpZ246Y2VudGVyO30jZGlhZ3JhbS0xIC5ub2RlLmNsaWNrYWJsZXtjdXJzb3I6cG9pbnRlcjt9I2RpYWdyYW0tMSAucm9vdCAuYW5jaG9yIHBhdGh7ZmlsbDojMzMzMzMzIWltcG9ydGFudDtzdHJva2Utd2lkdGg6MDtzdHJva2U6IzMzMzMzMzt9I2RpYWdyYW0tMSAuYXJyb3doZWFkUGF0aHtmaWxsOiMzMzMzMzM7fSNkaWFncmFtLTEgLmVkZ2VQYXRoIC5wYXRoe3N0cm9rZTojMzMzMzMzO3N0cm9rZS13aWR0aDoxcHg7fSNkaWFncmFtLTEgLmZsb3djaGFydC1saW5re3N0cm9rZTojMzMzMzMzO2ZpbGw6bm9uZTt9I2RpYWdyYW0tMSAuZWRnZUxhYmVse2JhY2tncm91bmQtY29sb3I6cmdiYSgyMzIsMjMyLDIzMiwgMC44KTt0ZXh0LWFsaWduOmNlbnRlcjt9I2RpYWdyYW0tMSAuZWRnZUxhYmVsIHB7YmFja2dyb3VuZC1jb2xvcjpyZ2JhKDIzMiwyMzIsMjMyLCAwLjgpO30jZGlhZ3JhbS0xIC5lZGdlTGFiZWwgcmVjdHtvcGFjaXR5OjAuNTtiYWNrZ3JvdW5kLWNvbG9yOnJnYmEoMjMyLDIzMiwyMzIsIDAuOCk7ZmlsbDpyZ2JhKDIzMiwyMzIsMjMyLCAwLjgpO30jZGlhZ3JhbS0xIC5sYWJlbEJrZ3tiYWNrZ3JvdW5kLWNvbG9yOnJnYmEoMjMyLCAyMzIsIDIzMiwgMC41KTt9I2RpYWdyYW0tMSAuY2x1c3RlciByZWN0e2ZpbGw6I2ZmZmZkZTtzdHJva2U6I2FhYWEzMztzdHJva2Utd2lkdGg6MXB4O30jZGlhZ3JhbS0xIC5jbHVzdGVyIHRleHR7ZmlsbDojMzMzO30jZGlhZ3JhbS0xIC5jbHVzdGVyIHNwYW57Y29sb3I6IzMzMzt9I2RpYWdyYW0tMSBkaXYubWVybWFpZFRvb2x0aXB7cG9zaXRpb246YWJzb2x1dGU7dGV4dC1hbGlnbjpjZW50ZXI7bWF4LXdpZHRoOjIwMHB4O3BhZGRpbmc6MnB4O2ZvbnQtZmFtaWx5OiJ0cmVidWNoZXQgbXMiLHZlcmRhbmEsYXJpYWwsc2Fucy1zZXJpZjtmb250LXNpemU6MTJweDtiYWNrZ3JvdW5kOmhzbCg4MCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpO2JvcmRlcjoxcHggc29saWQgI2FhYWEzMztib3JkZXItcmFkaXVzOjJweDtwb2ludGVyLWV2ZW50czpub25lO3otaW5kZXg6MTAwO30jZGlhZ3JhbS0xIC5mbG93Y2hhcnRUaXRsZVRleHR7dGV4dC1hbmNob3I6bWlkZGxlO2ZvbnQtc2l6ZToxOHB4O2ZpbGw6IzMzMzt9I2RpYWdyYW0tMSByZWN0LnRleHR7ZmlsbDpub25lO3N0cm9rZS13aWR0aDowO30jZGlhZ3JhbS0xIC5pY29uLXNoYXBlLCNkaWFncmFtLTEgLmltYWdlLXNoYXBle2JhY2tncm91bmQtY29sb3I6cmdiYSgyMzIsMjMyLDIzMiwgMC44KTt0ZXh0LWFsaWduOmNlbnRlcjt9I2RpYWdyYW0tMSAuaWNvbi1zaGFwZSBwLCNkaWFncmFtLTEgLmltYWdlLXNoYXBlIHB7YmFja2dyb3VuZC1jb2xvcjpyZ2JhKDIzMiwyMzIsMjMyLCAwLjgpO3BhZGRpbmc6MnB4O30jZGlhZ3JhbS0xIC5pY29uLXNoYXBlIC5sYWJlbCByZWN0LCNkaWFncmFtLTEgLmltYWdlLXNoYXBlIC5sYWJlbCByZWN0e29wYWNpdHk6MC41O2JhY2tncm91bmQtY29sb3I6cmdiYSgyMzIsMjMyLDIzMiwgMC44KTtmaWxsOnJnYmEoMjMyLDIzMiwyMzIsIDAuOCk7fSNkaWFncmFtLTEgLmxhYmVsLWljb257ZGlzcGxheTppbmxpbmUtYmxvY2s7aGVpZ2h0OjFlbTtvdmVyZmxvdzp2aXNpYmxlO3ZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO30jZGlhZ3JhbS0xIC5ub2RlIC5sYWJlbC1pY29uIHBhdGh7ZmlsbDpjdXJyZW50Q29sb3I7c3Ryb2tlOnJldmVydDtzdHJva2Utd2lkdGg6cmV2ZXJ0O30jZGlhZ3JhbS0xIC5ub2RlIC5uZW8tbm9kZXtzdHJva2U6IzkzNzBEQjt9I2RpYWdyYW0tMSBbZGF0YS1sb29rPSJuZW8iXS5ub2RlIHJlY3QsI2RpYWdyYW0tMSBbZGF0YS1sb29rPSJuZW8iXS5jbHVzdGVyIHJlY3QsI2RpYWdyYW0tMSBbZGF0YS1sb29rPSJuZW8iXS5ub2RlIHBvbHlnb257c3Ryb2tlOiM5MzcwREI7ZmlsdGVyOmRyb3Atc2hhZG93KDFweCAycHggMnB4IHJnYmEoMTg1LCAxODUsIDE4NSwgMSkpO30jZGlhZ3JhbS0xIFtkYXRhLWxvb2s9Im5lbyJdLm5vZGUgcGF0aHtzdHJva2U6IzkzNzBEQjtzdHJva2Utd2lkdGg6MXB4O30jZGlhZ3JhbS0xIFtkYXRhLWxvb2s9Im5lbyJdLm5vZGUgLm91dGVyLXBhdGh7ZmlsdGVyOmRyb3Atc2hhZG93KDFweCAycHggMnB4IHJnYmEoMTg1LCAxODUsIDE4NSwgMSkpO30jZGlhZ3JhbS0xIFtkYXRhLWxvb2s9Im5lbyJdLm5vZGUgLm5lby1saW5lIHBhdGh7c3Ryb2tlOiM5MzcwREI7ZmlsdGVyOm5vbmU7fSNkaWFncmFtLTEgW2RhdGEtbG9vaz0ibmVvIl0ubm9kZSBjaXJjbGV7c3Ryb2tlOiM5MzcwREI7ZmlsdGVyOmRyb3Atc2hhZG93KDFweCAycHggMnB4IHJnYmEoMTg1LCAxODUsIDE4NSwgMSkpO30jZGlhZ3JhbS0xIFtkYXRhLWxvb2s9Im5lbyJdLm5vZGUgY2lyY2xlIC5zdGF0ZS1zdGFydHtmaWxsOiMwMDAwMDA7fSNkaWFncmFtLTEgW2RhdGEtbG9vaz0ibmVvIl0uaWNvbi1zaGFwZSAuaWNvbntmaWxsOiM5MzcwREI7ZmlsdGVyOmRyb3Atc2hhZG93KDFweCAycHggMnB4IHJnYmEoMTg1LCAxODUsIDE4NSwgMSkpO30jZGlhZ3JhbS0xIFtkYXRhLWxvb2s9Im5lbyJdLmljb24tc2hhcGUgLmljb24tbmVvIHBhdGh7c3Ryb2tlOiM5MzcwREI7ZmlsdGVyOmRyb3Atc2hhZG93KDFweCAycHggMnB4IHJnYmEoMTg1LCAxODUsIDE4NSwgMSkpO30jZGlhZ3JhbS0xIDpyb290ey0tbWVybWFpZC1mb250LWZhbWlseToidHJlYnVjaGV0IG1zIix2ZXJkYW5hLGFyaWFsLHNhbnMtc2VyaWY7fTwvc3R5bGU+PGc+PG1hcmtlciBpZD0iZGlhZ3JhbS0xX2Zsb3djaGFydC12Mi1wb2ludEVuZCIgY2xhc3M9Im1hcmtlciBmbG93Y2hhcnQtdjIiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iNSIgcmVmWT0iNSIgbWFya2VyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXJrZXJXaWR0aD0iOCIgbWFya2VySGVpZ2h0PSI4IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0gMCAwIEwgMTAgNSBMIDAgMTAgeiIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvcGF0aD48L21hcmtlcj48bWFya2VyIGlkPSJkaWFncmFtLTFfZmxvd2NoYXJ0LXYyLXBvaW50U3RhcnQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjQuNSIgcmVmWT0iNSIgbWFya2VyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXJrZXJXaWR0aD0iOCIgbWFya2VySGVpZ2h0PSI4IiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0gMCA1IEwgMTAgMTAgTCAxMCAwIHoiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDE7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7Ij48L3BhdGg+PC9tYXJrZXI+PG1hcmtlciBpZD0iZGlhZ3JhbS0xX2Zsb3djaGFydC12Mi1wb2ludEVuZC1tYXJnaW4iIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Qm94PSIwIDAgMTEuNSAxNCIgcmVmWD0iMTEuNSIgcmVmWT0iNyIgbWFya2VyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXJrZXJXaWR0aD0iMTAuNSIgbWFya2VySGVpZ2h0PSIxNCIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNIDAgMCBMIDExLjUgNyBMIDAgMTQgeiIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMDsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvcGF0aD48L21hcmtlcj48bWFya2VyIGlkPSJkaWFncmFtLTFfZmxvd2NoYXJ0LXYyLXBvaW50U3RhcnQtbWFyZ2luIiBjbGFzcz0ibWFya2VyIGZsb3djaGFydC12MiIgdmlld0JveD0iMCAwIDExLjUgMTQiIHJlZlg9IjEiIHJlZlk9IjciIG1hcmtlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2VyV2lkdGg9IjExLjUiIG1hcmtlckhlaWdodD0iMTQiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwLDcgMTEuNSwxNCAxMS41LDAiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDA7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7Ij48L3BvbHlnb24+PC9tYXJrZXI+PG1hcmtlciBpZD0iZGlhZ3JhbS0xX2Zsb3djaGFydC12Mi1jaXJjbGVFbmQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjExIiByZWZZPSI1IiBtYXJrZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcldpZHRoPSIxMSIgbWFya2VySGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9ImRpYWdyYW0tMV9mbG93Y2hhcnQtdjItY2lyY2xlU3RhcnQiIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9Ii0xIiByZWZZPSI1IiBtYXJrZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcldpZHRoPSIxMSIgbWFya2VySGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMTsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9ImRpYWdyYW0tMV9mbG93Y2hhcnQtdjItY2lyY2xlRW5kLW1hcmdpbiIgY2xhc3M9Im1hcmtlciBmbG93Y2hhcnQtdjIiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWT0iNSIgcmVmWD0iMTIuMjUiIG1hcmtlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2VyV2lkdGg9IjE0IiBtYXJrZXJIZWlnaHQ9IjE0IiBvcmllbnQ9ImF1dG8iPjxjaXJjbGUgY3g9IjUiIGN5PSI1IiByPSI1IiBjbGFzcz0iYXJyb3dNYXJrZXJQYXRoIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOiAwOyBzdHJva2UtZGFzaGFycmF5OiAxLCAwOyI+PC9jaXJjbGU+PC9tYXJrZXI+PG1hcmtlciBpZD0iZGlhZ3JhbS0xX2Zsb3djaGFydC12Mi1jaXJjbGVTdGFydC1tYXJnaW4iIGNsYXNzPSJtYXJrZXIgZmxvd2NoYXJ0LXYyIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9Ii0yIiByZWZZPSI1IiBtYXJrZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcldpZHRoPSIxNCIgbWFya2VySGVpZ2h0PSIxNCIgb3JpZW50PSJhdXRvIj48Y2lyY2xlIGN4PSI1IiBjeT0iNSIgcj0iNSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMDsgc3Ryb2tlLWRhc2hhcnJheTogMSwgMDsiPjwvY2lyY2xlPjwvbWFya2VyPjxtYXJrZXIgaWQ9ImRpYWdyYW0tMV9mbG93Y2hhcnQtdjItY3Jvc3NFbmQiIGNsYXNzPSJtYXJrZXIgY3Jvc3MgZmxvd2NoYXJ0LXYyIiB2aWV3Qm94PSIwIDAgMTEgMTEiIHJlZlg9IjEyIiByZWZZPSI1LjIiIG1hcmtlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2VyV2lkdGg9IjExIiBtYXJrZXJIZWlnaHQ9IjExIiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0gMSwxIGwgOSw5IE0gMTAsMSBsIC05LDkiIGNsYXNzPSJhcnJvd01hcmtlclBhdGgiIHN0eWxlPSJzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7Ij48L3BhdGg+PC9tYXJrZXI+PG1hcmtlciBpZD0iZGlhZ3JhbS0xX2Zsb3djaGFydC12Mi1jcm9zc1N0YXJ0IiBjbGFzcz0ibWFya2VyIGNyb3NzIGZsb3djaGFydC12MiIgdmlld0JveD0iMCAwIDExIDExIiByZWZYPSItMSIgcmVmWT0iNS4yIiBtYXJrZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIG1hcmtlcldpZHRoPSIxMSIgbWFya2VySGVpZ2h0PSIxMSIgb3JpZW50PSJhdXRvIj48cGF0aCBkPSJNIDEsMSBsIDksOSBNIDEwLDEgbCAtOSw5IiBjbGFzcz0iYXJyb3dNYXJrZXJQYXRoIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtZGFzaGFycmF5OiAxLCAwOyI+PC9wYXRoPjwvbWFya2VyPjxtYXJrZXIgaWQ9ImRpYWdyYW0tMV9mbG93Y2hhcnQtdjItY3Jvc3NFbmQtbWFyZ2luIiBjbGFzcz0ibWFya2VyIGNyb3NzIGZsb3djaGFydC12MiIgdmlld0JveD0iMCAwIDE1IDE1IiByZWZYPSIxNy43IiByZWZZPSI3LjUiIG1hcmtlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgbWFya2VyV2lkdGg9IjEyIiBtYXJrZXJIZWlnaHQ9IjEyIiBvcmllbnQ9ImF1dG8iPjxwYXRoIGQ9Ik0gMSwxIEwgMTQsMTQgTSAxLDE0IEwgMTQsMSIgY2xhc3M9ImFycm93TWFya2VyUGF0aCIgc3R5bGU9InN0cm9rZS13aWR0aDogMi41OyI+PC9wYXRoPjwvbWFya2VyPjxtYXJrZXIgaWQ9ImRpYWdyYW0tMV9mbG93Y2hhcnQtdjItY3Jvc3NTdGFydC1tYXJnaW4iIGNsYXNzPSJtYXJrZXIgY3Jvc3MgZmxvd2NoYXJ0LXYyIiB2aWV3Qm94PSIwIDAgMTUgMTUiIHJlZlg9Ii0zLjUiIHJlZlk9IjcuNSIgbWFya2VyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBtYXJrZXJXaWR0aD0iMTIiIG1hcmtlckhlaWdodD0iMTIiIG9yaWVudD0iYXV0byI+PHBhdGggZD0iTSAxLDEgTCAxNCwxNCBNIDEsMTQgTCAxNCwxIiBjbGFzcz0iYXJyb3dNYXJrZXJQYXRoIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOiAyLjU7IHN0cm9rZS1kYXNoYXJyYXk6IDEsIDA7Ij48L3BhdGg+PC9tYXJrZXI+PGcgY2xhc3M9InJvb3QiPjxnIGNsYXNzPSJjbHVzdGVycyI+PC9nPjxnIGNsYXNzPSJlZGdlUGF0aHMiPjxwYXRoIGQ9Ik03NC41NTIsNTVMNjkuMzQ5LDU5LjE2N0M2NC4xNDYsNjMuMzMzLDUzLjc0MSw3MS42NjcsNDguNTM5LDc5LjMzM0M0My4zMzYsODcsNDMuMzM2LDk0LDQzLjMzNiw5Ny41TDQzLjMzNiwxMDEiIGlkPSJkaWFncmFtLTEtTF9BX0JfMCIgY2xhc3M9ImVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBmbG93Y2hhcnQtbGluayIgc3R5bGU9IjsiIGRhdGEtZWRnZT0idHJ1ZSIgZGF0YS1ldD0iZWRnZSIgZGF0YS1pZD0iTF9BX0JfMCIgZGF0YS1wb2ludHM9Ilczc2llQ0k2TnpRdU5UVXhOekEzTkRjME1qSTJPQ3dpZVNJNk5UVjlMSHNpZUNJNk5ETXVNek0xT1RNM05Td2llU0k2T0RCOUxIc2llQ0k2TkRNdU16TTFPVE0zTlN3aWVTSTZNVEExZlYwPSIgZGF0YS1sb29rPSJjbGFzc2ljIiBtYXJrZXItZW5kPSJ1cmwoI2RpYWdyYW0tMV9mbG93Y2hhcnQtdjItcG9pbnRFbmQpIj48L3BhdGg+PHBhdGggZD0iTTEzMy4yMzcsNTVMMTM4LjQ0LDU5LjE2N0MxNDMuNjQzLDYzLjMzMywxNTQuMDQ4LDcxLjY2NywxNTkuMjUsNzkuMzMzQzE2NC40NTMsODcsMTY0LjQ1Myw5NCwxNjQuNDUzLDk3LjVMMTY0LjQ1MywxMDEiIGlkPSJkaWFncmFtLTEtTF9BX0NfMCIgY2xhc3M9ImVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBmbG93Y2hhcnQtbGluayIgc3R5bGU9IjsiIGRhdGEtZWRnZT0idHJ1ZSIgZGF0YS1ldD0iZWRnZSIgZGF0YS1pZD0iTF9BX0NfMCIgZGF0YS1wb2ludHM9Ilczc2llQ0k2TVRNekxqSXpOek0xTlRBeU5UYzNNekU0TENKNUlqbzFOWDBzZXlKNElqb3hOalF1TkRVek1USTFMQ0o1SWpvNE1IMHNleUo0SWpveE5qUXVORFV6TVRJMUxDSjVJam94TURWOVhRPT0iIGRhdGEtbG9vaz0iY2xhc3NpYyIgbWFya2VyLWVuZD0idXJsKCNkaWFncmFtLTFfZmxvd2NoYXJ0LXYyLXBvaW50RW5kKSI+PC9wYXRoPjxwYXRoIGQ9Ik00My4zMzYsMTUyTDQzLjMzNiwxNTYuMTY3QzQzLjMzNiwxNjAuMzMzLDQzLjMzNiwxNjguNjY3LDQ4LjAxOCwxNzYuNTgzQzUyLjcsMTg0LjUsNjIuMDY1LDE5Miw2Ni43NDcsMTk1Ljc1TDcxLjQzLDE5OS41IiBpZD0iZGlhZ3JhbS0xLUxfQl9EXzAiIGNsYXNzPSJlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGVkZ2UtdGhpY2tuZXNzLW5vcm1hbCBlZGdlLXBhdHRlcm4tc29saWQgZmxvd2NoYXJ0LWxpbmsiIHN0eWxlPSI7IiBkYXRhLWVkZ2U9InRydWUiIGRhdGEtZXQ9ImVkZ2UiIGRhdGEtaWQ9IkxfQl9EXzAiIGRhdGEtcG9pbnRzPSJXM3NpZUNJNk5ETXVNek0xT1RNM05Td2llU0k2TVRVeWZTeDdJbmdpT2pRekxqTXpOVGt6TnpVc0lua2lPakUzTjMwc2V5SjRJam8zTkM0MU5URTNNRGMwTnpReU1qWTRMQ0o1SWpveU1ESjlYUT09IiBkYXRhLWxvb2s9ImNsYXNzaWMiIG1hcmtlci1lbmQ9InVybCgjZGlhZ3JhbS0xX2Zsb3djaGFydC12Mi1wb2ludEVuZCkiPjwvcGF0aD48cGF0aCBkPSJNMTY0LjQ1MywxNTJMMTY0LjQ1MywxNTYuMTY3QzE2NC40NTMsMTYwLjMzMywxNjQuNDUzLDE2OC42NjcsMTU5Ljc3MSwxNzYuNTgzQzE1NS4wODksMTg0LjUsMTQ1LjcyNCwxOTIsMTQxLjA0MiwxOTUuNzVMMTM2LjM1OSwxOTkuNSIgaWQ9ImRpYWdyYW0tMS1MX0NfRF8wIiBjbGFzcz0iZWRnZS10aGlja25lc3Mtbm9ybWFsIGVkZ2UtcGF0dGVybi1zb2xpZCBlZGdlLXRoaWNrbmVzcy1ub3JtYWwgZWRnZS1wYXR0ZXJuLXNvbGlkIGZsb3djaGFydC1saW5rIiBzdHlsZT0iOyIgZGF0YS1lZGdlPSJ0cnVlIiBkYXRhLWV0PSJlZGdlIiBkYXRhLWlkPSJMX0NfRF8wIiBkYXRhLXBvaW50cz0iVzNzaWVDSTZNVFkwTGpRMU16RXlOU3dpZVNJNk1UVXlmU3g3SW5naU9qRTJOQzQwTlRNeE1qVXNJbmtpT2pFM04zMHNleUo0SWpveE16TXVNak0zTXpVMU1ESTFOemN6TVRnc0lua2lPakl3TW4xZCIgZGF0YS1sb29rPSJjbGFzc2ljIiBtYXJrZXItZW5kPSJ1cmwoI2RpYWdyYW0tMV9mbG93Y2hhcnQtdjItcG9pbnRFbmQpIj48L3BhdGg+PC9nPjxnIGNsYXNzPSJlZGdlTGFiZWxzIj48ZyBjbGFzcz0iZWRnZUxhYmVsIj48ZyBjbGFzcz0ibGFiZWwiIGRhdGEtaWQ9IkxfQV9CXzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj48dGV4dCB5PSItMTAuMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+PHRzcGFuIGNsYXNzPSJ0ZXh0LW91dGVyLXRzcGFuIHJvdyIgeD0iMCIgeT0iLTAuMWVtIiBkeT0iMS4xZW0iIHRleHQtYW5jaG9yPSJtaWRkbGUiPjwvdHNwYW4+PC90ZXh0PjwvZz48L2c+PGc+PHJlY3QgY2xhc3M9ImJhY2tncm91bmQiIHN0eWxlPSJzdHJva2U6IG5vbmUiPjwvcmVjdD48L2c+PGcgY2xhc3M9ImVkZ2VMYWJlbCI+PGcgY2xhc3M9ImxhYmVsIiBkYXRhLWlkPSJMX0FfQ18wIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAwKSI+PHRleHQgeT0iLTEwLjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjx0c3BhbiBjbGFzcz0idGV4dC1vdXRlci10c3BhbiByb3ciIHg9IjAiIHk9Ii0wLjFlbSIgZHk9IjEuMWVtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj48L3RzcGFuPjwvdGV4dD48L2c+PC9nPjxnPjxyZWN0IGNsYXNzPSJiYWNrZ3JvdW5kIiBzdHlsZT0ic3Ryb2tlOiBub25lIj48L3JlY3Q+PC9nPjxnIGNsYXNzPSJlZGdlTGFiZWwiPjxnIGNsYXNzPSJsYWJlbCIgZGF0YS1pZD0iTF9CX0RfMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgMCkiPjx0ZXh0IHk9Ii0xMC4xIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj48dHNwYW4gY2xhc3M9InRleHQtb3V0ZXItdHNwYW4gcm93IiB4PSIwIiB5PSItMC4xZW0iIGR5PSIxLjFlbSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+PC90c3Bhbj48L3RleHQ+PC9nPjwvZz48Zz48cmVjdCBjbGFzcz0iYmFja2dyb3VuZCIgc3R5bGU9InN0cm9rZTogbm9uZSI+PC9yZWN0PjwvZz48ZyBjbGFzcz0iZWRnZUxhYmVsIj48ZyBjbGFzcz0ibGFiZWwiIGRhdGEtaWQ9IkxfQ19EXzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj48dGV4dCB5PSItMTAuMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+PHRzcGFuIGNsYXNzPSJ0ZXh0LW91dGVyLXRzcGFuIHJvdyIgeD0iMCIgeT0iLTAuMWVtIiBkeT0iMS4xZW0iIHRleHQtYW5jaG9yPSJtaWRkbGUiPjwvdHNwYW4+PC90ZXh0PjwvZz48L2c+PGc+PHJlY3QgY2xhc3M9ImJhY2tncm91bmQiIHN0eWxlPSJzdHJva2U6IG5vbmUiPjwvcmVjdD48L2c+PC9nPjxnIGNsYXNzPSJub2RlcyI+PGcgY2xhc3M9Im5vZGUgZGVmYXVsdCIgaWQ9ImRpYWdyYW0tMS1mbG93Y2hhcnQtQS0wIiBkYXRhLWxvb2s9ImNsYXNzaWMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwMy44OTQ1MzEyNSwgMzEuNSkiPjxyZWN0IGNsYXNzPSJiYXNpYyBsYWJlbC1jb250YWluZXIiIHN0eWxlPSIiIHg9Ii0zNS41IiB5PSItMjMuNSIgd2lkdGg9IjcxIiBoZWlnaHQ9IjQ3Ij48L3JlY3Q+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZT0iIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAtOC41KSI+PHJlY3Q+PC9yZWN0PjxnPjxyZWN0IGNsYXNzPSJiYWNrZ3JvdW5kIiBzdHlsZT0ic3Ryb2tlOiBub25lIj48L3JlY3Q+PHRleHQgeT0iLTEwLjEiIHN0eWxlPSIiPjx0c3BhbiBjbGFzcz0idGV4dC1vdXRlci10c3BhbiByb3ciIHg9IjAiIHk9Ii0wLjFlbSIgZHk9IjEuMWVtIj48dHNwYW4gZm9udC1zdHlsZT0ibm9ybWFsIiBjbGFzcz0idGV4dC1pbm5lci10c3BhbiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+QTwvdHNwYW4+PC90c3Bhbj48L3RleHQ+PC9nPjwvZz48L2c+PGcgY2xhc3M9Im5vZGUgZGVmYXVsdCIgaWQ9ImRpYWdyYW0tMS1mbG93Y2hhcnQtQi0xIiBkYXRhLWxvb2s9ImNsYXNzaWMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQzLjMzNTkzNzUsIDEyOC41KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGU9IiIgeD0iLTM1LjMzNTkzNzUiIHk9Ii0yMy41IiB3aWR0aD0iNzAuNjcxODc1IiBoZWlnaHQ9IjQ3Ij48L3JlY3Q+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZT0iIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAtOC41KSI+PHJlY3Q+PC9yZWN0PjxnPjxyZWN0IGNsYXNzPSJiYWNrZ3JvdW5kIiBzdHlsZT0ic3Ryb2tlOiBub25lIj48L3JlY3Q+PHRleHQgeT0iLTEwLjEiIHN0eWxlPSIiPjx0c3BhbiBjbGFzcz0idGV4dC1vdXRlci10c3BhbiByb3ciIHg9IjAiIHk9Ii0wLjFlbSIgZHk9IjEuMWVtIj48dHNwYW4gZm9udC1zdHlsZT0ibm9ybWFsIiBjbGFzcz0idGV4dC1pbm5lci10c3BhbiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+QjwvdHNwYW4+PC90c3Bhbj48L3RleHQ+PC9nPjwvZz48L2c+PGcgY2xhc3M9Im5vZGUgZGVmYXVsdCIgaWQ9ImRpYWdyYW0tMS1mbG93Y2hhcnQtQy0zIiBkYXRhLWxvb2s9ImNsYXNzaWMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2NC40NTMxMjUsIDEyOC41KSI+PHJlY3QgY2xhc3M9ImJhc2ljIGxhYmVsLWNvbnRhaW5lciIgc3R5bGU9IiIgeD0iLTM1Ljc4MTI1IiB5PSItMjMuNSIgd2lkdGg9IjcxLjU2MjUiIGhlaWdodD0iNDciPjwvcmVjdD48ZyBjbGFzcz0ibGFiZWwiIHN0eWxlPSIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIC04LjUpIj48cmVjdD48L3JlY3Q+PGc+PHJlY3QgY2xhc3M9ImJhY2tncm91bmQiIHN0eWxlPSJzdHJva2U6IG5vbmUiPjwvcmVjdD48dGV4dCB5PSItMTAuMSIgc3R5bGU9IiI+PHRzcGFuIGNsYXNzPSJ0ZXh0LW91dGVyLXRzcGFuIHJvdyIgeD0iMCIgeT0iLTAuMWVtIiBkeT0iMS4xZW0iPjx0c3BhbiBmb250LXN0eWxlPSJub3JtYWwiIGNsYXNzPSJ0ZXh0LWlubmVyLXRzcGFuIiBmb250LXdlaWdodD0ibm9ybWFsIj5DPC90c3Bhbj48L3RzcGFuPjwvdGV4dD48L2c+PC9nPjwvZz48ZyBjbGFzcz0ibm9kZSBkZWZhdWx0IiBpZD0iZGlhZ3JhbS0xLWZsb3djaGFydC1ELTUiIGRhdGEtbG9vaz0iY2xhc3NpYyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAzLjg5NDUzMTI1LCAyMjUuNSkiPjxyZWN0IGNsYXNzPSJiYXNpYyBsYWJlbC1jb250YWluZXIiIHN0eWxlPSIiIHg9Ii0zNS43ODEyNSIgeT0iLTIzLjUiIHdpZHRoPSI3MS41NjI1IiBoZWlnaHQ9IjQ3Ij48L3JlY3Q+PGcgY2xhc3M9ImxhYmVsIiBzdHlsZT0iIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLCAtOC41KSI+PHJlY3Q+PC9yZWN0PjxnPjxyZWN0IGNsYXNzPSJiYWNrZ3JvdW5kIiBzdHlsZT0ic3Ryb2tlOiBub25lIj48L3JlY3Q+PHRleHQgeT0iLTEwLjEiIHN0eWxlPSIiPjx0c3BhbiBjbGFzcz0idGV4dC1vdXRlci10c3BhbiByb3ciIHg9IjAiIHk9Ii0wLjFlbSIgZHk9IjEuMWVtIj48dHNwYW4gZm9udC1zdHlsZT0ibm9ybWFsIiBjbGFzcz0idGV4dC1pbm5lci10c3BhbiIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+RDwvdHNwYW4+PC90c3Bhbj48L3RleHQ+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PGRlZnM+PGZpbHRlciBpZD0iZGlhZ3JhbS0xLWRyb3Atc2hhZG93IiBoZWlnaHQ9IjEzMCUiIHdpZHRoPSIxMzAlIj48ZmVEcm9wU2hhZG93IGR4PSI0IiBkeT0iNCIgc3RkRGV2aWF0aW9uPSIwIiBmbG9vZC1vcGFjaXR5PSIwLjA2IiBmbG9vZC1jb2xvcj0iIzAwMDAwMCI+PC9mZURyb3BTaGFkb3c+PC9maWx0ZXI+PC9kZWZzPjxkZWZzPjxmaWx0ZXIgaWQ9ImRpYWdyYW0tMS1kcm9wLXNoYWRvdy1zbWFsbCIgaGVpZ2h0PSIxNTAlIiB3aWR0aD0iMTUwJSI+PGZlRHJvcFNoYWRvdyBkeD0iMiIgZHk9IjIiIHN0ZERldmlhdGlvbj0iMCIgZmxvb2Qtb3BhY2l0eT0iMC4wNiIgZmxvb2QtY29sb3I9IiMwMDAwMDAiPjwvZmVEcm9wU2hhZG93PjwvZmlsdGVyPjwvZGVmcz48L3N2Zz4="></pre>
-<figcaption><a class="self-link" href="#Mermaidvoorbeeld">Figuur <bdi class="figno">2</bdi></a> <span class="fig-title">Mermaid voorbeeld</span></figcaption>
-</figure></section>
+<section data-include-format="markdown" data-include="imgeo-3d-03-algemeneprincipes.md" data-include-id="include-9655419658000969" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-03-algemeneprincipes.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-03-algemeneprincipes-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-04-datakwaliteit.md" data-include-id="include-910371788325141" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-04-datakwaliteit.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-04-datakwaliteit-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-05-teksten.md" data-include-id="include-8862480458950008" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-05-teksten.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-05-teksten-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-06-semantischgegevensmodel.md" data-include-id="include-9172648832633734" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-06-semantischgegevensmodel.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-06-semantischgegevensmodel-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-07-objecttypen.md" data-include-id="include-7356410470362076" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-07-objecttypen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-07-objecttypen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-08-attributen.md" data-include-id="include-2185595981644567" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-08-attributen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-08-attributen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-09-domeinwaarden.md" data-include-id="include-6107113152607234" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-09-domeinwaarden.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-09-domeinwaarden-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-10-objectafbakening-pand-panddelen.md" data-include-id="include-12524775061220517" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-10-objectafbakening-pand-panddelen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-10-objectafbakening-pand-panddelen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-10-objectafbakening.md" data-include-id="include-18671978304299497" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-10-objectafbakening.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-10-objectafbakening-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-11-afkortingen.md" data-include-id="include-40283376307177077" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-11-afkortingen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-11-afkortingen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-12-documentatie.md" data-include-id="include-15716609028016126" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-12-documentatie.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-12-documentatie-md-cannot-read-properties-of-null-reading-localname"></section>
 
- 
+<section class="appendix" id="bijlage-a-definities-en-afkortingen"><div class="header-wrapper"><h2 id="a-bijlage-a-definities-en-afkortingen"><bdi class="secno">A. </bdi>Bijlage A: Definities en Afkortingen</h2><a class="self-link" href="#bijlage-a-definities-en-afkortingen" aria-label="Permalink for Appendix A."></a></div>
+<p><dfn id="dfn-lod" tabindex="0" aria-haspopup="dialog">LOD</dfn>: Levels of Detail<br>Met LOD wordt in catalogus het Level Of Detail bedoeld zoals gedefinieerd in CityGML 3.0. Het CityGML Conceptuele Model onderscheid vier levels: LOD-0, -1, -2 en -3. Bij een toenemend LOD-niveau neemt de geometrische detaillering van objecten toe.</p>
+</section> 
 
 
 
@@ -1545,23 +1554,29 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 
 
 
-<section id="conformance"><div class="header-wrapper"><h2 id="x4-conformiteit"><bdi class="secno">4. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 4."></a></div><p>Naast onderdelen die als niet-normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet-normatief. Verder is alles in dit document normatief.</p></section>
-<section id="tof"><div class="header-wrapper"><h2 id="x5-lijst-met-figuren"><bdi class="secno">5. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section 5."></a></div><ul class="tof">
+<section id="conformance"><div class="header-wrapper"><h2 id="b-conformiteit"><bdi class="secno">B. </bdi>Conformiteit</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section B."></a></div><p>Naast onderdelen die als niet-normatief gemarkeerd zijn, zijn ook alle diagrammen, voorbeelden, en noten in dit document niet-normatief. Verder is alles in dit document normatief.</p></section>
+<section id="tof"><div class="header-wrapper"><h2 id="c-lijst-met-figuren"><bdi class="secno">C. </bdi>Lijst met figuren</h2><a class="self-link" href="#tof" aria-label="Permalink for Section C."></a></div><ul class="tof">
         <li class="tofline">
-    <a class="tocxref" href="#fig-onderschrift"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">Onderschrift</span></a>
+    <a class="tocxref" href="#fig-voorstelling-van-hoe-een-mapping-van-deels-toekomstig-bgt-en-imgeo-zou-kunnen-zijn-onder-het-nen3610-2022-raamwerk"><span class="self-link">Figuur <bdi class="figno">1</bdi></span> <span class="fig-title">Voorstelling van hoe een mapping van (deels toekomstig) BGT en IMGEO zou kunnen zijn onder het NEN3610:2022 raamwerk</span></a>
   </li><li class="tofline">
-    <a class="tocxref" href="#Mermaidvoorbeeld"><span class="self-link">Figuur <bdi class="figno">2</bdi></span> <span class="fig-title">Mermaid voorbeeld</span></a>
+    <a class="tocxref" href="#fig-citygml3-0-lod-hoofdniveaus"><span class="self-link">Figuur <bdi class="figno">2</bdi></span> <span class="fig-title">(CityGML3.0 LOD hoofdniveaus)</span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#refined-lods"><span class="self-link">Figuur <bdi class="figno">3</bdi></span> <span class="fig-title">
+    Refined LoDs for CityGML Buildings. Bron: [<cite><span class="bibref" data-link-type="biblio">Biljecki16c</span></cite>].
+  </span></a>
+  </li><li class="tofline">
+    <a class="tocxref" href="#fig-verschillend-lod-gebruik-in-de-semantische-decompositie-van-een-gebouw"><span class="self-link">Figuur <bdi class="figno">4</bdi></span> <span class="fig-title">(Verschillend LOD gebruik in de semantische decompositie van een gebouw)</span></a>
   </li>
       </ul></section>
-<section id="index" class="appendix"><div class="header-wrapper"><h2 id="a-index"><bdi class="secno">A. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix A."></a></div><section id="index-defined-here">
-    <div class="header-wrapper"><h3 id="a-1-termen-gedefinieerd-door-deze-specificatie"><bdi class="secno">A.1 </bdi>Termen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix A.1"></a></div>
+<section id="index" class="appendix"><div class="header-wrapper"><h2 id="d-index"><bdi class="secno">D. </bdi>Index</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix D."></a></div><section id="index-defined-here">
+    <div class="header-wrapper"><h3 id="d-1-termen-gedefinieerd-door-deze-specificatie"><bdi class="secno">D.1 </bdi>Termen gedefinieerd door deze specificatie</h3><a class="self-link" href="#index-defined-here" aria-label="Permalink for Appendix D.1"></a></div>
     <ul class="index">
     <li>
-      <a class="index-term" href="#dfn-definitie">Definitie</a> 
-    <span class="print-only">§2.1</span></li>
+      <a class="index-term" href="#dfn-lod">LOD</a> 
+    <span class="print-only">§A.</span></li>
   </ul>
   </section><section id="index-defined-elsewhere">
-    <div class="header-wrapper"><h3 id="a-2-termen-gedefinieerd-door-verwijzing"><bdi class="secno">A.2 </bdi>Termen gedefinieerd door verwijzing</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix A.2"></a></div>
+    <div class="header-wrapper"><h3 id="d-2-termen-gedefinieerd-door-verwijzing"><bdi class="secno">D.2 </bdi>Termen gedefinieerd door verwijzing</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix D.2"></a></div>
     <ul class="index">
     
   </ul>
@@ -1569,26 +1584,35 @@ Dit hoofdstuk is toegevoegd met <code>class="informative"</code> in <code>config
 
 
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="normatieve-referenties">
-    <div class="header-wrapper"><h3 id="b-1-normatieve-referenties"><bdi class="secno">B.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
-    <dl class="bibliography"><dt id="bib-mim12">[MIM12]</dt><dd>
-      <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20240613/"><cite>MIM - Metamodel Informatie Modellering (Versie 1.2)</cite></a>.  Geonovum. 2024-06-13. Definitief. URL: <a href="https://docs.geostandaarden.nl/mim/def-st-mim-20240613/">https://docs.geostandaarden.nl/mim/def-st-mim-20240613/</a>
-    </dd><dt id="bib-semver">[SemVer]</dt><dd>
-      <a href="https://semver.org"><cite>Semantic Versioning 2.0.0</cite></a>. T. Preston-Werner. June 2013. URL: <a href="https://semver.org">https://semver.org</a>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="e-referenties"><bdi class="secno">E. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix E."></a></div><section id="normatieve-referenties">
+    <div class="header-wrapper"><h3 id="e-1-normatieve-referenties"><bdi class="secno">E.1 </bdi>Normatieve referenties</h3><a class="self-link" href="#normatieve-referenties" aria-label="Permalink for Appendix E.1"></a></div>
+    <dl class="bibliography"><dt id="bib-biljecki16c">[Biljecki16c]</dt><dd>
+      <a href="https://doi.org/10.1016/j.compenvurbsys.2016.04.005"><cite>An improved LOD specification for 3D building models</cite></a>. Filip Biljecki; Hugo Ledoux; Jantien Stoter.  Computers, Environment and Urban Systems. 2016. URL: <a href="https://doi.org/10.1016/j.compenvurbsys.2016.04.005">https://doi.org/10.1016/j.compenvurbsys.2016.04.005</a>
+    </dd><dt id="bib-nen3610">[NEN3610]</dt><dd>
+      <a href="https://www.nen.nl/nen-3610-2022-nl-296137"><cite>NEN 3610:2022 nl - BBasismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten</cite></a>.  NEN. 2022-05-31. Definitief. URL: <a href="https://www.nen.nl/nen-3610-2022-nl-296137">https://www.nen.nl/nen-3610-2022-nl-296137</a>
+    </dd></dl>
+  </section><section id="informatieve-referenties">
+    <div class="header-wrapper"><h3 id="e-2-informatieve-referenties"><bdi class="secno">E.2 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix E.2"></a></div>
+    <dl class="bibliography"><dt id="bib-bgt12">[BGT12]</dt><dd>
+      <a href="https://docs.geostandaarden.nl/imgeo/def-im-BGT-20200701/"><cite>Basisregistratie Grootschalige Topografie Gegegevenscatalogus BGT 1.2</cite></a>.  Geonovum. 2020-07-01. Definitief. URL: <a href="https://docs.geostandaarden.nl/imgeo/def-im-BGT-20200701/">https://docs.geostandaarden.nl/imgeo/def-im-BGT-20200701/</a>
+    </dd><dt id="bib-citygml3">[CityGML3]</dt><dd>
+      <a href="https://docs.ogc.org/is/20-010/20-010.html"><cite>OGC City Geography Markup Language (CityGML) Part 1: Conceptual Model Standard v3.0</cite></a>.  Open Geospatial Consortium. 2021-09-13. Published. URL: <a href="https://docs.ogc.org/is/20-010/20-010.html">https://docs.ogc.org/is/20-010/20-010.html</a>
+    </dd><dt id="bib-imgeo22">[IMGEO22]</dt><dd>
+      <a href="https://docs.geostandaarden.nl/imgeo/def-im-IMGeo-20200701/"><cite>Basisregistratie Grootschalige Topografie Gegevenscatalogus IMGeo 2.2</cite></a>.  Geonovum. 2020-07-01. Definitief. URL: <a href="https://docs.geostandaarden.nl/imgeo/def-im-IMGeo-20200701/">https://docs.geostandaarden.nl/imgeo/def-im-IMGeo-20200701/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>
-  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-definitie" aria-label="Links in this document to definition: Definitie">
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-lod" aria-label="Links in this document to definition: LOD">
       <span class="caret"></span>
       <div>
-        <a class="self-link" href="#dfn-definitie" aria-label="Permalink for definition: Definitie. Activate to close this dialog.">Permalink</a>
+        <a class="self-link" href="#dfn-lod" aria-label="Permalink for definition: LOD. Activate to close this dialog.">Permalink</a>
          
         
       </div>
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-      <a href="#ref-for-dfn-definitie-1" title="§ 2.3 Referenties">§ 2.3 Referenties</a> 
+      <a href="#ref-for-dfn-lod-1" title="§ 2.6.1 Level Of Detail (LOD)">§ 2.6.1 Level Of Detail (LOD)</a> 
     </li>
   </ul>
     </div><script id="respec-dfn-panel">(() => {
@@ -1830,4 +1854,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Geonovum Handreiking - Document</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Geonovum Standaard - Werkversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
