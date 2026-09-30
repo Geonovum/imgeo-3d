@@ -126,7 +126,19 @@ let respecConfig = {
       status: "Definitief",
       publisher: "Geonovum",
       date: "2020-07-01"
-    }
+    },
+    Biljecki16c: {
+    id: "Biljecki16c",
+    title: "An improved LOD specification for 3D building models",
+    authors: [
+      "Filip Biljecki",
+      "Hugo Ledoux",
+      "Jantien Stoter"
+    ],
+    publisher: "Computers, Environment and Urban Systems",
+    date: "2016",
+    href: "https://doi.org/10.1016/j.compenvurbsys.2016.04.005"
+  }
   }
 };
 
