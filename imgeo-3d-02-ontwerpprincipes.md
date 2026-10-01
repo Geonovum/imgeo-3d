@@ -23,7 +23,6 @@ IMGeo 3D kent dezelfde dekking als IMGEO en BGT in het horizontale vlak. In het 
 nvt...?
 
 ## Modellering
------------
 IMGeo-3D hanteert het Basismodel Geo-informatie (NEN 3610:2022) voor de
 modellering. NEN 3610:2011 conformeert zich aan de ISO 19100 standaarden voor
 geo-informatie. Deze gelden daarom ook voor de BGT.
