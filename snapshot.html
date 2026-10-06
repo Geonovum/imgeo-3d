@@ -113,6 +113,51 @@ ul.index code{color:inherit}
 </style>
 <meta name="description" content="TODO: vul in abstract.md een abstract in.">
 <style>
+.hljs,body:has(input[name=color-scheme][value=light]:checked) .hljs,head:not(:has(meta[name=color-scheme][content~=dark]))+body .hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
+@media (prefers-color-scheme:dark){
+.hljs{
+  --base: #282c34;
+  --mono-1: #abb2bf;
+  --mono-2: #818896;
+  --mono-3: #5c6370;
+  --hue-1: #56b6c2;
+  --hue-2: #61aeee;
+  --hue-3: #c678dd;
+  --hue-4: #98c379;
+  --hue-5: #e06c75;
+  --hue-5-2: #be5046;
+  --hue-6: #d19a66;
+  --hue-6-2: #e6c07b;
+}
+}
+body:has(input[name=color-scheme][value=dark]:checked) .hljs{
+  --base: #282c34;
+  --mono-1: #abb2bf;
+  --mono-2: #818896;
+  --mono-3: #5c6370;
+  --hue-1: #56b6c2;
+  --hue-2: #61aeee;
+  --hue-3: #c678dd;
+  --hue-4: #98c379;
+  --hue-5: #e06c75;
+  --hue-5-2: #be5046;
+  --hue-6: #d19a66;
+  --hue-6-2: #e6c07b;
+}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;color:var(--mono-1,#383a42);background:#fafafa;background:var(--base,#fafafa)}
+.hljs-comment,.hljs-quote{color:#717277;color:var(--mono-3,#717277);font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4;color:var(--hue-3,#a626a4)}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;color:var(--hue-5,#ca4706);font-weight:700}
+.hljs-literal{color:#0b76c5;color:var(--hue-1,#0b76c5)}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c;color:var(--hue-4,#42803c)}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01;color:var(--hue-6-2,#9a6a01)}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801;color:var(--hue-6,#986801)}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3;color:var(--hue-2,#336ae3)}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
 
   .sidelabel {
     position: fixed;
@@ -1398,7 +1443,7 @@ ul.index code{color:inherit}
     <h2>
       Geonovum Standaard<br>
       Werkversie
-      <time class="dt-published" datetime="2026-02-09">30 september 2026</time>
+      <time class="dt-published" datetime="2026-02-09">06 oktober 2026</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
@@ -1445,7 +1490,7 @@ ul.index code{color:inherit}
 
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>TODO: vul in abstract.md een abstract in.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#ontwerpprincipes"><bdi class="secno">2. </bdi>Ontwerpprincipes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#topografie"><bdi class="secno">2.1 </bdi>Topografie</a></li><li class="tocline"><a class="tocxref" href="#schaalbereik"><bdi class="secno">2.2 </bdi>Schaalbereik</a></li><li class="tocline"><a class="tocxref" href="#reele-en-virtuele-objecten"><bdi class="secno">2.3 </bdi>Reële en virtuele objecten</a></li><li class="tocline"><a class="tocxref" href="#x3d-dekking"><bdi class="secno">2.4 </bdi>3D Dekking</a></li><li class="tocline"><a class="tocxref" href="#imgeo-objecten-in-de-bgt"><bdi class="secno">2.5 </bdi>IMGeo-objecten in de BGT</a></li><li class="tocline"><a class="tocxref" href="#modellering"><bdi class="secno">2.6 </bdi>Modellering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-detail-lod"><bdi class="secno">2.6.1 </bdi>Level Of Detail (LOD)</a></li><li class="tocline"><a class="tocxref" href="#niveau-van-semantishe-decompositie"><bdi class="secno">2.6.2 </bdi>Niveau van Semantishe Decompositie</a></li><li class="tocline"><a class="tocxref" href="#x3d-coordinaten"><bdi class="secno">2.6.3 </bdi>3D Coordinaten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geen-inhoud-van-de-bgt-macro-objecten"><bdi class="secno">2.7 </bdi>Geen inhoud van de BGT: macro-objecten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-definities-en-afkortingen"><bdi class="secno">A. </bdi>Bijlage A: Definities en Afkortingen</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">B. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">C. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">D. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">D.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">D.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">E.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">E.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#ontwerpprincipes"><bdi class="secno">2. </bdi>Ontwerpprincipes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#topografie"><bdi class="secno">2.1 </bdi>Topografie</a></li><li class="tocline"><a class="tocxref" href="#schaalbereik"><bdi class="secno">2.2 </bdi>Schaalbereik</a></li><li class="tocline"><a class="tocxref" href="#reele-en-virtuele-objecten"><bdi class="secno">2.3 </bdi>Reële en virtuele objecten</a></li><li class="tocline"><a class="tocxref" href="#x3d-dekking"><bdi class="secno">2.4 </bdi>3D Dekking</a></li><li class="tocline"><a class="tocxref" href="#imgeo-objecten-in-de-bgt"><bdi class="secno">2.5 </bdi>IMGeo-objecten in de BGT</a></li><li class="tocline"><a class="tocxref" href="#modellering"><bdi class="secno">2.6 </bdi>Modellering</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#level-of-detail-lod"><bdi class="secno">2.6.1 </bdi>Level Of Detail (LOD)</a></li><li class="tocline"><a class="tocxref" href="#niveau-van-semantishe-decompositie"><bdi class="secno">2.6.2 </bdi>Niveau van Semantishe Decompositie</a></li><li class="tocline"><a class="tocxref" href="#x3d-coordinaten"><bdi class="secno">2.6.3 </bdi>3D Coordinaten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#geen-inhoud-van-de-bgt-macro-objecten"><bdi class="secno">2.7 </bdi>Geen inhoud van de BGT: macro-objecten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#algemene-principes"><bdi class="secno">3. </bdi>Algemene principes</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#bronhouders"><bdi class="secno">3.1 </bdi>Bronhouders</a></li><li class="tocline"><a class="tocxref" href="#manier-van-3d-inwinning"><bdi class="secno">3.2 </bdi>Manier van 3D inwinning</a></li><li class="tocline"><a class="tocxref" href="#talud"><bdi class="secno">3.3 </bdi>Talud</a></li><li class="tocline"><a class="tocxref" href="#functioneel-gebied"><bdi class="secno">3.4 </bdi>Functioneel gebied</a></li><li class="tocline"><a class="tocxref" href="#coordinaat-referentiesysteem"><bdi class="secno">3.5 </bdi>Coördinaat-referentiesysteem</a></li><li class="tocline"><a class="tocxref" href="#geometrietypen"><bdi class="secno">3.6 </bdi>Geometrietypen</a></li><li class="tocline"><a class="tocxref" href="#topologie-in-3d"><bdi class="secno">3.7 </bdi>Topologie in 3D</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-definities-en-afkortingen"><bdi class="secno">A. </bdi>Bijlage A: Definities en Afkortingen</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">B. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#tof"><bdi class="secno">C. </bdi>Lijst met figuren</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">D. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">D.1 </bdi>Termen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">D.2 </bdi>Termen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normatieve-referenties"><bdi class="secno">E.1 </bdi>Normatieve referenties</a></li><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">E.2 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
 
 
 <section class="informative" id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi>Inleiding</h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet-normatief.</em></p>
@@ -1474,7 +1519,6 @@ samengevat onder de term 3D-basistopografie.</p>
 </section><section id="imgeo-objecten-in-de-bgt"><div class="header-wrapper"><h3 id="x2-5-imgeo-objecten-in-de-bgt"><bdi class="secno">2.5 </bdi>IMGeo-objecten in de BGT</h3><a class="self-link" href="#imgeo-objecten-in-de-bgt" aria-label="Permalink for Section 2.5"></a></div>
 <p>nvt...?</p>
 </section><section id="modellering"><div class="header-wrapper"><h3 id="x2-6-modellering"><bdi class="secno">2.6 </bdi>Modellering</h3><a class="self-link" href="#modellering" aria-label="Permalink for Section 2.6"></a></div>
-<hr>
 <p>IMGeo-3D hanteert het Basismodel Geo-informatie (NEN 3610:2022) voor de
 modellering. NEN 3610:2011 conformeert zich aan de ISO 19100 standaarden voor
 geo-informatie. Deze gelden daarom ook voor de BGT.</p>
@@ -1532,17 +1576,472 @@ later moment te kunnen maken, is het BGT-model gebaseerd op CityGML 2.0. </p>
 </section></section><section id="geen-inhoud-van-de-bgt-macro-objecten"><div class="header-wrapper"><h3 id="x2-7-geen-inhoud-van-de-bgt-macro-objecten"><bdi class="secno">2.7 </bdi>Geen inhoud van de BGT: macro-objecten</h3><a class="self-link" href="#geen-inhoud-van-de-bgt-macro-objecten" aria-label="Permalink for Section 2.7"></a></div>
 <p>Geen verandering t.o.v. BGT/IMGEO.</p>
 </section></section>
-<section data-include-format="markdown" data-include="imgeo-3d-03-algemeneprincipes.md" data-include-id="include-9655419658000969" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-03-algemeneprincipes.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-03-algemeneprincipes-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-04-datakwaliteit.md" data-include-id="include-910371788325141" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-04-datakwaliteit.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-04-datakwaliteit-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-05-teksten.md" data-include-id="include-8862480458950008" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-05-teksten.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-05-teksten-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-06-semantischgegevensmodel.md" data-include-id="include-9172648832633734" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-06-semantischgegevensmodel.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-06-semantischgegevensmodel-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-07-objecttypen.md" data-include-id="include-7356410470362076" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-07-objecttypen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-07-objecttypen-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-08-attributen.md" data-include-id="include-2185595981644567" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-08-attributen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-08-attributen-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-09-domeinwaarden.md" data-include-id="include-6107113152607234" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-09-domeinwaarden.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-09-domeinwaarden-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-10-objectafbakening-pand-panddelen.md" data-include-id="include-12524775061220517" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-10-objectafbakening-pand-panddelen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-10-objectafbakening-pand-panddelen-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-10-objectafbakening.md" data-include-id="include-18671978304299497" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-10-objectafbakening.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-10-objectafbakening-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-11-afkortingen.md" data-include-id="include-40283376307177077" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-11-afkortingen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-11-afkortingen-md-cannot-read-properties-of-null-reading-localname"></section>
-<section data-include-format="markdown" data-include="imgeo-3d-12-documentatie.md" data-include-id="include-15716609028016126" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-12-documentatie.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-12-documentatie-md-cannot-read-properties-of-null-reading-localname"></section>
+<section id="algemene-principes"><div class="header-wrapper"><h2 id="x3-algemene-principes"><bdi class="secno">3. </bdi>Algemene principes</h2><a class="self-link" href="#algemene-principes" aria-label="Permalink for Section 3."></a></div>
+<p>Voor de inhoud van de IMGeo-3D  zijn de volgende algemene principes gehanteerd.</p>
+<section id="bronhouders"><div class="header-wrapper"><h3 id="x3-1-bronhouders"><bdi class="secno">3.1 </bdi>Bronhouders</h3><a class="self-link" href="#bronhouders" aria-label="Permalink for Section 3.1"></a></div>
+<p>Het bronhoudersprincipe blijft in 3D ongewijzigd t.o.v. BGT/IMGEO. </p>
+</section><section id="manier-van-3d-inwinning"><div class="header-wrapper"><h3 id="x3-2-manier-van-3d-inwinning"><bdi class="secno">3.2 </bdi>Manier van 3D inwinning</h3><a class="self-link" href="#manier-van-3d-inwinning" aria-label="Permalink for Section 3.2"></a></div>
+<p>Er zijn verschillende methoden om 3D-gegevens voor IMGeo-3D in te winnen en te verwerken. Er zijn drie belangrijke routes om tot 3D-geoinformatie voor IMGeo-3D te komen. Dit zijn: </p>
+<ul>
+<li><strong>Directe 3D inwinning:</strong> 3D gegevens worden rechtstreeks in de werkelijkheid ingewonnen met bijvoorbeeld LiDAR, fotogrammetrie of landmeetkundige metingen. </li>
+<li><strong>3D-verrijking van bestaande 2D registraties:</strong> Bestaande 2D IMGeo-/BGT-gegevens worden aangevuld met hoogte- en andere 3D-informatie en vervolgens verwerkt tot 3D-geoinformatie.  </li>
+<li><strong>Van 3D-BIM naar 3D-Geo:</strong> bestaande 3D BIM-modellen worden getransformeerd naar 3D-Geoinformatie.</li>
+</ul>
+<p>IMGeo-3D houdt rekening met verschillende methoden waarop 3D-gegevens kunnen worden ingewonnen en opgebouwd. De wijze waarop gegevens zijn ingewonnen, bepaalt welke informatie beschikbaar is en welke mogelijkheden en beperkingen dit met zich meebrengt voor de verdere verwerking en modellering.</p>
+</section><section id="talud"><div class="header-wrapper"><h3 id="x3-3-talud"><bdi class="secno">3.3 </bdi>Talud</h3><a class="self-link" href="#talud" aria-label="Permalink for Section 3.3"></a></div>
+<p>Kruinlijngeometrie vervalt in IMGeo-3D. </p>
+</section><section id="functioneel-gebied"><div class="header-wrapper"><h3 id="x3-4-functioneel-gebied"><bdi class="secno">3.4 </bdi>Functioneel gebied</h3><a class="self-link" href="#functioneel-gebied" aria-label="Permalink for Section 3.4"></a></div>
+<p>Het functioneel gebied in de BGT kent het object Kering. In IMGeo-3D valt functioneel gebied onder het concept Virtuele ruimte. Dit sluit aan op CityGML3.0 die onderscheid maakt in Ingenomen Ruimte(OccupiedSpace) en Vrije Ruimte (UnoccupiedSpace) waarbij de ruimte met de properties class, functie en gebruik gespecificeerd kunnen worden. <mark> Wordt nu hetzelfde bedoeld in IMGEO? Is het LandUse? Hoe wordt dit nu gebruikt? Voor nu buiten scope. </mark> </p>
+</section><section id="coordinaat-referentiesysteem"><div class="header-wrapper"><h3 id="x3-5-coordinaat-referentiesysteem"><bdi class="secno">3.5 </bdi>Coördinaat-referentiesysteem</h3><a class="self-link" href="#coordinaat-referentiesysteem" aria-label="Permalink for Section 3.5"></a></div>
+<p>Het toegepaste coördinaatsysteem voor IMGEO-3D is een samengesteld CRS voor Nederland met de naam RDNAP(EPSG:7415). Dit coördinaatsysteem is een samenstelling van het Geprojecteerd CRS Rijksdriehoeksmeting (RD-stelsel (EPSG:28992)), waarmee men de x en y coördinaten kan duiden, en het Vertikaal CRS Normaal Amsterdams Peil (NAP (EPSG:5709)).</p>
+<p>De coördinaatgetallen zijn daarbij op millimeternauwkeurigheid met als eenheid meters. Het coördinaatgetal heeft maximaal drie cijfers achter de komma. <mark>(Waarom?!?! Onhandig met BIM of vergelijkingen)</mark> Zo nodig wordt daarvoor afgerond,zodanig&nbsp;dat als het vierde cijfer achter de komma de waarde 1 t/m 4 bedraagt, het derde cijfer achter de komma niet wijzigt en als het vierde cijfer achter de komma de waarde 5 t/m 9 bedraagt, het derde cijfer achter de komma met één wordt
+verhoogd, met mogelijk ook implicaties voor de voorliggende cijfers, waarbij dezelfde regel geldt.</p>
+<p>Het RD-stelsel voldoet aan de eisen van de Europese richtlijn INSPIRE. Deze
+stelt dat binnen de Europese continentale aardschol, waartoe ook Nederland en
+het Nederlandse deel van de Noordzee behoort, geldt dat coördinaten herleidbaar
+moeten zijn tot het European Terrestrial Reference System 1989 (ETRS89) voor de
+horizontale component. <mark> Hoe dan? Er is toch geen z? </mark></p>
+</section><section id="geometrietypen"><div class="header-wrapper"><h3 id="x3-6-geometrietypen"><bdi class="secno">3.6 </bdi>Geometrietypen</h3><a class="self-link" href="#geometrietypen" aria-label="Permalink for Section 3.6"></a></div>
+<p>Het BGT-informatiemodel beschrijft het geometrietype als een associatie van een
+object met een geometrie-object. Daarbij maakt de BGT onderscheid in vlak-,
+lijn- en puntgeometrie. Tot de BGT-inhoud behoren de volgende objecten.</p>
+<table>
+<thead>
+<tr>
+<th><em>Object</em></th>
+<th><em>BGT classificatie</em></th>
+<th><em>Plus classificatie</em></th>
+<th><em>Geometrie</em></th>
+<th><em>Ruimte</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>Bouwwerk</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Pand</strong></td>
+<td>Grondvlaksituatie van BAG-pand</td>
+<td></td>
+<td>2D Multivlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Overig bouwwerk</strong></td>
+<td><em>Type:</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>overkapping</td>
+<td></td>
+<td>2D Multivlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>open loods</td>
+<td></td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>opslagtank</td>
+<td></td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>bezinkbak</td>
+<td></td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>windturbine</td>
+<td></td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>lage trafo</td>
+<td></td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>bassin</td>
+<td></td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>niet-bgt</td>
+<td>bunker</td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>niet-bgt</td>
+<td>voedersilo</td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td>niet-bgt</td>
+<td>schuur</td>
+<td>2D Vlak</td>
+<td>2D</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>wordt:</p>
+<table>
+<thead>
+<tr>
+<th><em>Object</em></th>
+<th><em>BGT classificatie</em></th>
+<th><em>Plus classificatie</em></th>
+<th><em>Geometrie</em></th>
+<th><em>Ruimte</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>Bouwwerk</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Pand</strong></td>
+<td>Grondvlaksituatie van BAG-pand</td>
+<td></td>
+<td>LOD 0.1 2D Multivlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>3D blokmodel boven maaiveld van BAG-pand met 1 hoogte</td>
+<td></td>
+<td>LOD 1.2 3D Solid</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte</td>
+<td></td>
+<td>LOD 1.3 3D Solid</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte</td>
+<td></td>
+<td>LOD 2.2 3D Solid</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Overig bouwwerk</strong></td>
+<td><em>Type:</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>overkapping</td>
+<td></td>
+<td>LOD0 2D Multivlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>open loods</td>
+<td></td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>opslagtank</td>
+<td></td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>bezinkbak</td>
+<td></td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>windturbine</td>
+<td></td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>lage trafo</td>
+<td></td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>bassin</td>
+<td></td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>niet-bgt</td>
+<td>bunker</td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>niet-bgt</td>
+<td>voedersilo</td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td>niet-bgt</td>
+<td>schuur</td>
+<td>LOD0 2D Vlak</td>
+<td>3D</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Dit zijn de  termen die uit de extensie komen:</p>
+<p>Maar dit komt niet helemaal overeen met CityGML 3.0 beelden. </p>
+<p>LOD 0.0 De meest grove representatie. Gebouwen groter dan 6 m worden opgenomen en aangrenzende gebouwen mogen worden samengevoegd tot één geometrische entiteit.
+LOD 0.1 Gebouwen worden individueel gemodelleerd en grote gebouwonderdelen worden opgenomen.
+LOD 0.2 Naast grote gebouwonderdelen worden ook kleinere gebouwonderdelen en uitbreidingen, zoals erkers, opgenomen. De footprint wordt op één hoogte weergegeven en ook het dakrandvlak wordt opgenomen.
+LOD 0.3 Gelijk aan LOD0.2, maar met de mogelijkheid om meerdere horizontale oppervlakken op verschillende hoogtes te modelleren wanneer het hoogteverschil groter is dan een bepaalde drempel (bijvoorbeeld 2 m).</p>
+<p>LOD 1.0 De meest grove 3D-representatie. Gebouwen groter dan 6 m worden opgenomen en aangrenzende gebouwen mogen worden geaggregeerd.
+LOD 1.1 Gebouwen worden individueel gemodelleerd en grote gebouwonderdelen worden opgenomen.
+LOD 1.2: Ook kleinere gebouwonderdelen en uitbreidingen, zoals erkers, worden gemodelleerd. Het gebouw wordt daarbij in principe tot één hoogte geëxtrudeerd.
+LOD 1.3: Gelijk aan LOD1.2, maar meerdere horizontale bovenvlakken zijn toegestaan wanneer het hoogteverschil groter is dan een bepaalde drempel (bijvoorbeeld 2 m). Hierdoor kunnen bijvoorbeeld verschillende bouwhoogtes of grote inspringingen afzonderlijk worden gemodelleerd.</p>
+<p>LOD2.0 is een grofmazig model met standaard dakstructuren, waarin mogelijk ook grote gebouwonderdelen, zoals garages, worden opgenomen (groter dan 4 m en 10 m²).
+LOD2.1 is vergelijkbaar met LOD2.0, met als verschil dat ook kleinere gebouwonderdelen en uitbreidingen, zoals erkers, grote uitsparingen in gevels en externe rookkanalen, moeten worden opgenomen (groter dan 2 m en 2 m²). In vergelijking met het grovere model kan het modelleren van dergelijke kenmerken in deze LOD voordelen bieden voor toepassingen zoals het schatten van de energiebehoefte, omdat het muuroppervlak nauwkeuriger in kaart wordt gebracht.
+LOD2.2 voldoet aan de eisen van LOD2.0 en LOD2.1, met als toevoeging dat ook dakopbouwen (groter dan 2 m en 2 m²) moeten worden opgenomen. Dit betreft voornamelijk dakkapellen, maar ook andere relatief grote dakconstructies, zoals zeer grote schoorsteenconstructies. 
+LOD2.3 vereist dat dakoverstekken expliciet worden gemodelleerd wanneer deze groter zijn dan 0,2 m. Hierdoor bevinden de dakrand en de gebouwcontouren zich altijd op hun werkelijke locatie. Dit biedt voordelen voor toepassingen waarbij het volume van het gebouw van belang is.</p>
+<p>LOD 3.0 Een model waarbij dakstructuren gedetailleerder zijn dan in LOD2.2, terwijl overige onderdelen, zoals gevels en muren, op het niveau van LOD2.2 zijn gemodelleerd. Dakdetails kunnen bijvoorbeeld dakramen bevatten. Ramen van dakkapellen hoeven niet te worden gemodelleerd.
+LOD 3.1 Een hybride model dat specifiek aansluit bij terrestrische acquisitietechnieken, zoals Mobile Mapping Systems. Alle elementen onder het dak worden op het niveau van LOD3.2 gemodelleerd, terwijl het dak op het niveau van LOD2.3 wordt gemodelleerd. Hierdoor kunnen bijvoorbeeld dakoverstekken expliciet worden weergegeven, terwijl moeilijk vanaf de grond waarneembare dakdetails minder gedetailleerd zijn.
+LOD 3.2 Een architectonisch gedetailleerd model waarin elementen groter dan 1,0 m worden gemodelleerd. Dit omvat onder andere ramen, deuren, balkons en andere relevante gevel- en dakdetails.
+LOD 3.3 Een zeer gedetailleerd architectonisch model waarin elementen groter dan 0,2 m worden gemodelleerd. Dit omvat onder andere raamneggen/raamopeningen in 3D, luifels en vergelijkbare kleine architectonische details.</p>
+<p><mark> N.B. Functionele gebieden doen, in tegenstelling tot alle andere 
+BGT-vlakobjecten, niet mee in de topologische structuur. Zij liggen als het ware
+als een overlay over andere BGT-objecten. Bij de kering kan het bijvoorbeeld
+gaan om dijken die zijn samengesteld uit terreindelen en wegdelen. De begrenzing
+van functionele gebieden hoeft niet samen te vallen met de begrenzing van
+objecten. </mark> Dit is dan toch wel topologisch? Overlay = overlapt? Wat bedoelt men hier?</p>
+<p><mark> Wat moeten we hiermee? een nen2660:RuimtelijkGebied nen2660:isBegrensdDoor een nen2660:ReeelObject en een nen2660:RuimtelijkGebied nen2660:bevat een nen2660:ReeelObject. Kunnen we hier wat mee?<br>nen2660-term:SpatialRegion 
+ a skos:Concept ;
+ skos:broader nen2660-term:PhysicalObject ;
+ skos:definition "A physical object that encloses a particular area, such as a room, roadway and river, 
+that is bounded by real objects or other spatial areas (e.g., by usage or convention) and that contains 
+primarily liquid or gaseous amount of matter"@en ;
+ skos:definition "Een fysiek object dat een bepaald gebied omsluit, zoals een vertrek, rijbaan en rivier,
+en dat wordt begrensd door reële objecten of andere ruimtelijke gebieden (bijvoorbeeld op basis van 
+gebruik of conventie) en dat voornamelijk vloeibare of gasvormige hoeveelheid materie bevat"@nl ;</mark></p>
+<p><a href="https://w3id.org/nen2660/term#SpatialRegion">https://w3id.org/nen2660/term#SpatialRegion</a>
+</p>
+<p>Voor de beschrijving van geometrieën geldt het ISO 19107 Spatial Schema. Voor de uitwisseling wordt gebruik gemaakt van Geography Markup Language (GML) 3.1.1. </p>
+<p>In de LOD 0-serie van IMGeo-3D zijn de geometrieën uit het GML 3.1.1 Simple Features Profile v1.0 toegestaan, aangevuld met cirkelbogen (GM_Arc).</p>
+<p>In de LOD 1-, LOD 2- en LOD 3-serie van IMGeo-3D wordt voor volumetrische geometrieën GM_Solid gebruikt. De begrenzing van deze solids wordt opgebouwd uit oppervlakken die gebruikmaken van de geometrieën die binnen het GML 3.1.1 Simple Features Profile v1.0 zijn toegestaan, aangevuld met cirkelbogen (GM_Arc)</p>
+<p>De geometrie-objecten worden in het informatiemodel met hun ISO 19107 naam,
+zoals GM_Surface, aangeduid. Bij objecten die een lijn- of een vlakgeometrie
+kunnen hebben, is een associatie met GM_Object gelegd. Een GM_Object mag een ISO
+punt, lijn, of volume zijn. In de praktijk betekent dit voor BGT objecten dat lijn-
+of vlakgeometrie is toegestaan. Bij hetzelfde objecttype kan in het optionele
+IMGeo-deel mogelijk wel puntgeometrie voorkomen.</p>
+<table>
+<thead>
+<tr>
+<th>Geometrietype</th>
+<th>ISO aanduiding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vlak</td>
+<td>GM_Surface</td>
+</tr>
+<tr>
+<td>Lijn</td>
+<td>GM_Curve</td>
+</tr>
+<tr>
+<td>Punt</td>
+<td>GM_Point</td>
+</tr>
+<tr>
+<td>Multivlak</td>
+<td>GM_MultiSurface</td>
+</tr>
+<tr>
+<td>Multipunt</td>
+<td>GM_MultiPoint</td>
+</tr>
+<tr>
+<td>Solid</td>
+<td>GM_Solid</td>
+</tr>
+<tr>
+<td>MultiSolid</td>
+<td>GM_MultiSolid</td>
+</tr>
+<tr>
+<td>Geometrie algemeen</td>
+<td>GM_Object</td>
+</tr>
+</tbody></table>
+<p>Zowel lijn-, vlak- als solidvormige objecten kunnen bestaan uit een boogvorm. Voor de
+representatie van boogvormen zijn er twee mogelijkheden in de BGT toegestaan,
+namelijk benadering van de boog met:</p>
+<ul>
+<li><p>lineaire lijnsegmenten, de zogenaamde gestrookte boog;</p>
+</li>
+<li><p>beschrijving van de boog met drie punten (GM_Arc).</p>
+</li>
+</ul>
+<p>Voor het weergeven van cirkels kan men gebruik maken van twee bogen. Gebruik van
+GM_Circle is niet toegestaan.</p>
+</section><section id="topologie-in-3d"><div class="header-wrapper"><h3 id="x3-7-topologie-in-3d"><bdi class="secno">3.7 </bdi>Topologie in 3D</h3><a class="self-link" href="#topologie-in-3d" aria-label="Permalink for Section 3.7"></a></div>
+<p><mark> Bij de LOD 0.0 En LOD 0.1 objecten blijft de topologie hetzelfde  </mark> </p>
+<p>De vlakobjecten in de BGT op maaiveldniveau (niveau 0) partitioneren de ruimte.
+Dat betekent dat:</p>
+<ul>
+<li><p>elk van deze objecten topologisch gestructureerd moet zijn;</p>
+</li>
+<li><p>deze objecten naadloos op elkaar aan moeten sluiten, zodat er op
+maaiveldniveau geen gaten voorkomen;</p>
+</li>
+<li><p>deze objecten elkaar niet mogen overlappen.</p>
+</li>
+</ul>
+<p>Op maaiveldniveau is het grondgebied van Nederland volledig gebiedsdekkend. Het
+totaal oppervlak van alle objecten op maaiveldniveau is gelijk aan het
+dekkingsgebied (zie paragraaf 2.4).</p>
+<p>Bij niveauverschillen kunnen objecten elkaar wel overlappen. Objecten op een
+niveau anders dan het maaiveld doen echter niet mee in de topologische
+structuur. Dit houdt onder meer in dat wanneer men dit object verwijdert er
+minimaal één ander object op niveau 0 overblijft.</p>
+<p>Elk objecttype bevat één geometrie op één niveau. Dit betekent bijvoorbeeld dat
+een weg zich opsplitst in meerdere wegdelen met eigen identificaties als deze
+over een brug loopt, ook al zijn de rest van de kenmerken gelijk.</p>
+<p><mark> Bij LOD 1 - LOD 3 is er een oplossing? </mark></p>
+<p>In het 3D geval dat elk object een 3D Solid is: 
+-&gt; Elke Solid is Geldig 
+-&gt; Solids mogen niet ongewenst overlappen  </p>
+<p>-&gt; 3D topologie is nog niet opgelost (nog geen oplossing voor). Wiskundigen (computational geometry)
+        -&gt; computation fluid dynamics (Github City for CFD (TU Delft)) stad en terrein als een waterdichte mesh. 
+        -&gt; Finite element modelling (FEM) voor aardbevegingen op gebouwen (gebied in voxels -&gt; kracht op loslaten, wat doet dit met een gebouw)
+-&gt; het gebouw is een intersectionsurface ( City GML, daar bovenop een gebouw als Solid).</p>
+<p>zie de productbeschrijving 3D Basisvoorziening <a href="https://3d.kadaster.nl/productbeschrijving/">https://3d.kadaster.nl/productbeschrijving/</a></p>
+<p>Closure Surfaces kunnen gebruikt worden om Solid Objecten deel te laten zijn van de kwaliteitscheck op kaartdichtheid. zie: <a href="https://docs.ogc.org/guides/20-066.html#_closure_surfaces">https://docs.ogc.org/guides/20-066.html#_closure_surfaces</a></p>
+<p>Terrain Intersection Curves <a href="https://docs.ogc.org/guides/20-066.html#_terrain_intersection_curves">https://docs.ogc.org/guides/20-066.html#_terrain_intersection_curves</a> kunnen interessant zijn voor uitgiftepeil/bouwpeil afspraken.</p>
+<p>Voorbeeld: </p>
+<p>&lt;bldg:Building gml:id="building_001"&gt;</p>
+<pre><code aria-busy="false" class="hljs xml"><span class="hljs-comment">&lt;!-- LOD0 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">core:lod0MultiSurface</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- LOD0 geometry --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">core:lod0MultiSurface</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- LOD1 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">core:lod1Solid</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- LOD1 geometry --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">core:lod1Solid</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- LOD2 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">core:lod2Solid</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- LOD2 geometry --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">core:lod2Solid</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- LOD3 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">core:lod3Solid</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- LOD3 geometry --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">core:lod3Solid</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Closure Surface --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">core:boundary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">core:ClosureSurface</span> <span class="hljs-attr">gml:id</span>=<span class="hljs-string">"closure_001"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">core:lod3MultiSurface</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- ClosureSurface geometry --&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">core:lod3MultiSurface</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">core:ClosureSurface</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">core:boundary</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Terrain Intersection Curve --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">core:lod1TerrainIntersectionCurve</span>&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- Terrain Intersection Curve Geometry --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">core:lod1TerrainIntersectionCurve</span>&gt;</span>
+</code></pre>
+<p></p>
+<p>Voor eventuele Solids kan gebruik gemaakt worden van de kennis die is opgedaan in het val3dity <a href="https://github.com/tudelft3d/val3dity">https://github.com/tudelft3d/val3dity</a> intitiatief en de 3D BAG <a href="https://docs.3dbag.nl/en/schema/concepts/">https://docs.3dbag.nl/en/schema/concepts/</a></p>
+<p>Kennis te gebruiken uit: <a href="https://docs.geostandaarden.nl/3dbv/basis-al-prod-20201009/">https://docs.geostandaarden.nl/3dbv/basis-al-prod-20201009/</a></p>
+<p><a href="https://www.pdok.nl/-/verbetering-kwaliteit-3d-basisvoorziening">https://www.pdok.nl/-/verbetering-kwaliteit-3d-basisvoorziening</a></p>
+</section></section>
+<section data-include-format="markdown" data-include="imgeo-3d-04-datakwaliteit.md" data-include-id="include-03433948405306664" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-04-datakwaliteit.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-04-datakwaliteit-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-05-teksten.md" data-include-id="include-06220760837811423" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-05-teksten.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-05-teksten-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-06-semantischgegevensmodel.md" data-include-id="include-6816183231850409" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-06-semantischgegevensmodel.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-06-semantischgegevensmodel-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-07-objecttypen.md" data-include-id="include-8587557654798111" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-07-objecttypen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-07-objecttypen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-08-attributen.md" data-include-id="include-22681039319743912" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-08-attributen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-08-attributen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-09-domeinwaarden.md" data-include-id="include-8524058766164943" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-09-domeinwaarden.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-09-domeinwaarden-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-10-objectafbakening-pand-panddelen.md" data-include-id="include-1032716469768814" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-10-objectafbakening-pand-panddelen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-10-objectafbakening-pand-panddelen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-10-objectafbakening.md" data-include-id="include-5145606809519095" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-10-objectafbakening.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-10-objectafbakening-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-11-afkortingen.md" data-include-id="include-025799460605097635" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-11-afkortingen.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-11-afkortingen-md-cannot-read-properties-of-null-reading-localname"></section>
+<section data-include-format="markdown" data-include="imgeo-3d-12-documentatie.md" data-include-id="include-6079132506324129" class="respec-offending-element" title="`data-include` failed: `imgeo-3d-12-documentatie.md` (Cannot read properties of null (reading 'localName'))." id="respec-offender-data-include-failed-imgeo-3d-12-documentatie-md-cannot-read-properties-of-null-reading-localname"></section>
 
 <section class="appendix" id="bijlage-a-definities-en-afkortingen"><div class="header-wrapper"><h2 id="a-bijlage-a-definities-en-afkortingen"><bdi class="secno">A. </bdi>Bijlage A: Definities en Afkortingen</h2><a class="self-link" href="#bijlage-a-definities-en-afkortingen" aria-label="Permalink for Appendix A."></a></div>
 <p><dfn id="dfn-lod" tabindex="0" aria-haspopup="dialog">LOD</dfn>: Levels of Detail<br>Met LOD wordt in catalogus het Level Of Detail bedoeld zoals gedefinieerd in CityGML 3.0. Het CityGML Conceptuele Model onderscheid vier levels: LOD-0, -1, -2 en -3. Bij een toenemend LOD-niveau neemt de geometrische detaillering van objecten toe.</p>
