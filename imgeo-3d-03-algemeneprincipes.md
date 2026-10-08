@@ -22,10 +22,9 @@ Kruinlijngeometrie vervalt in IMGeo-3D.
 
 ## Functioneel gebied
 
-Het functioneel gebied in de BGT kent het object Kering. In IMGeo-3D valt functioneel gebied onder het concept Virtuele ruimte. Dit sluit aan op CityGML3.0 die onderscheid maakt in Ingenomen Ruimte(OccupiedSpace) en Vrije Ruimte (UnoccupiedSpace) waarbij de ruimte met de properties class, functie en gebruik gespecificeerd kunnen worden. <mark> Wordt nu hetzelfde bedoeld in IMGEO? Is het LandUse? Hoe wordt dit nu gebruikt? Voor nu buiten scope. </mark> 
+In IMGeo-3D valt functioneel gebied onder het concept Virtuele ruimte. Dit sluit aan op CityGML3.0  die onderscheid maakt in Ruimte die kan worden geclassificeerd als Ingenomen Ruimte(OccupiedSpace) en Vrije Ruimte (UnoccupiedSpace) waarbij de ruimte met de properties class, functie en gebruik gespecificeerd kunnen worden.
 
 ## Coördinaat-referentiesysteem
-
 Het toegepaste coördinaatsysteem voor IMGEO-3D is een samengesteld CRS voor Nederland met de naam RDNAP(EPSG:7415). Dit coördinaatsysteem is een samenstelling van het Geprojecteerd CRS Rijksdriehoeksmeting (RD-stelsel (EPSG:28992)), waarmee men de x en y coördinaten kan duiden, en het Vertikaal CRS Normaal Amsterdams Peil (NAP (EPSG:5709)).
 
 De coördinaatgetallen zijn daarbij op millimeternauwkeurigheid met als eenheid meters. Het coördinaatgetal heeft maximaal drie cijfers achter de komma. <mark>(Waarom?!?! Onhandig met BIM of vergelijkingen)</mark> Zo nodig wordt daarvoor afgerond,zodanig dat als het vierde cijfer achter de komma de waarde 1 t/m 4 bedraagt, het derde cijfer achter de komma niet wijzigt en als het vierde cijfer achter de komma de waarde 5 t/m 9 bedraagt, het derde cijfer achter de komma met één wordt
@@ -40,7 +39,7 @@ horizontale component. <mark> Hoe dan? Er is toch geen z? </mark>
 ## Geometrietypen
 
 Het BGT-informatiemodel beschrijft het geometrietype als een associatie van een
-object met een geometrie-object. Daarbij maakt de BGT onderscheid in vlak-,
+object met een geometrie-object. Daarbij maakt de BGT onderscheid in solid-, vlak-,
 lijn- en puntgeometrie. Tot de BGT-inhoud behoren de volgende objecten.
 
 | *Object*                                                    | *BGT classificatie*            | *Plus classificatie*                       | *Geometrie*            |*Ruimte*        |
@@ -61,14 +60,14 @@ lijn- en puntgeometrie. Tot de BGT-inhoud behoren de volgende objecten.
 |                                                             | niet-bgt                       | schuur                                     | 2D Vlak                   | 2D             |
 |                                                             |                                |                                            |                        |              |
 
-wordt:
+Dit wordt in Imgeo-3D:
 
 | *Object*                                                    | *BGT classificatie*            | *Plus classificatie*                       | *Geometrie*            |*Ruimte*        |
 |-------------------------------------------------------------|--------------------------------|--------------------------------------------|------------------------|----------------|
 | *Bouwwerk*                                                  |                                |                                            |                        |              |
-| **Pand**                                                    | Grondvlaksituatie van BAG-pand |                                            | LOD 0.1 2D Multivlak    | 3D             |
-|                                                             | 3D blokmodel boven maaiveld van BAG-pand met 1 hoogte|                      | LOD 1.2 3D Solid       | 3D             |
-|                                                             | 3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte|               | LOD 1.3 3D Solid       | 3D             |
+| **Pand**                                                    | Grondvlaksituatie van BAG-pand |                                            | LOD 0.1 3D TriangulatedSurface    | 3D             |
+|                                                             | 3D blokmodel boven maaiveld van BAG-pand met 1 hoogte|                      | LOD 1.2 3D Solid met 2D grondvlak      | 3D             |
+|                                                             | 3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte|               | LOD 1.3 3D Solid met 2D grondvlak      | 3D             |
 |                                                             | 3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte|               | LOD 2.2 3D Solid       | 3D             |
 |                                                             |                                |                                            |                        |              |
 | **Overig bouwwerk**                                         | *Type:*                        |                                            |                        |              |
@@ -86,37 +85,9 @@ wordt:
 
 
 
-Dit zijn de  termen die uit de extensie komen:
 
-Maar dit komt niet helemaal overeen met CityGML 3.0 beelden. 
-
-LOD 0.0 De meest grove representatie. Gebouwen groter dan 6 m worden opgenomen en aangrenzende gebouwen mogen worden samengevoegd tot één geometrische entiteit.
-LOD 0.1 Gebouwen worden individueel gemodelleerd en grote gebouwonderdelen worden opgenomen.
-LOD 0.2 Naast grote gebouwonderdelen worden ook kleinere gebouwonderdelen en uitbreidingen, zoals erkers, opgenomen. De footprint wordt op één hoogte weergegeven en ook het dakrandvlak wordt opgenomen.
-LOD 0.3 Gelijk aan LOD0.2, maar met de mogelijkheid om meerdere horizontale oppervlakken op verschillende hoogtes te modelleren wanneer het hoogteverschil groter is dan een bepaalde drempel (bijvoorbeeld 2 m).
-
-LOD 1.0 De meest grove 3D-representatie. Gebouwen groter dan 6 m worden opgenomen en aangrenzende gebouwen mogen worden geaggregeerd.
-LOD 1.1 Gebouwen worden individueel gemodelleerd en grote gebouwonderdelen worden opgenomen.
-LOD 1.2: Ook kleinere gebouwonderdelen en uitbreidingen, zoals erkers, worden gemodelleerd. Het gebouw wordt daarbij in principe tot één hoogte geëxtrudeerd.
-LOD 1.3: Gelijk aan LOD1.2, maar meerdere horizontale bovenvlakken zijn toegestaan wanneer het hoogteverschil groter is dan een bepaalde drempel (bijvoorbeeld 2 m). Hierdoor kunnen bijvoorbeeld verschillende bouwhoogtes of grote inspringingen afzonderlijk worden gemodelleerd.
-
-LOD2.0 is een grofmazig model met standaard dakstructuren, waarin mogelijk ook grote gebouwonderdelen, zoals garages, worden opgenomen (groter dan 4 m en 10 m²).
-LOD2.1 is vergelijkbaar met LOD2.0, met als verschil dat ook kleinere gebouwonderdelen en uitbreidingen, zoals erkers, grote uitsparingen in gevels en externe rookkanalen, moeten worden opgenomen (groter dan 2 m en 2 m²). In vergelijking met het grovere model kan het modelleren van dergelijke kenmerken in deze LOD voordelen bieden voor toepassingen zoals het schatten van de energiebehoefte, omdat het muuroppervlak nauwkeuriger in kaart wordt gebracht.
-LOD2.2 voldoet aan de eisen van LOD2.0 en LOD2.1, met als toevoeging dat ook dakopbouwen (groter dan 2 m en 2 m²) moeten worden opgenomen. Dit betreft voornamelijk dakkapellen, maar ook andere relatief grote dakconstructies, zoals zeer grote schoorsteenconstructies. 
-LOD2.3 vereist dat dakoverstekken expliciet worden gemodelleerd wanneer deze groter zijn dan 0,2 m. Hierdoor bevinden de dakrand en de gebouwcontouren zich altijd op hun werkelijke locatie. Dit biedt voordelen voor toepassingen waarbij het volume van het gebouw van belang is.
-
-LOD 3.0 Een model waarbij dakstructuren gedetailleerder zijn dan in LOD2.2, terwijl overige onderdelen, zoals gevels en muren, op het niveau van LOD2.2 zijn gemodelleerd. Dakdetails kunnen bijvoorbeeld dakramen bevatten. Ramen van dakkapellen hoeven niet te worden gemodelleerd.
-LOD 3.1 Een hybride model dat specifiek aansluit bij terrestrische acquisitietechnieken, zoals Mobile Mapping Systems. Alle elementen onder het dak worden op het niveau van LOD3.2 gemodelleerd, terwijl het dak op het niveau van LOD2.3 wordt gemodelleerd. Hierdoor kunnen bijvoorbeeld dakoverstekken expliciet worden weergegeven, terwijl moeilijk vanaf de grond waarneembare dakdetails minder gedetailleerd zijn.
-LOD 3.2 Een architectonisch gedetailleerd model waarin elementen groter dan 1,0 m worden gemodelleerd. Dit omvat onder andere ramen, deuren, balkons en andere relevante gevel- en dakdetails.
-LOD 3.3 Een zeer gedetailleerd architectonisch model waarin elementen groter dan 0,2 m worden gemodelleerd. Dit omvat onder andere raamneggen/raamopeningen in 3D, luifels en vergelijkbare kleine architectonische details.
-
-
-<mark> N.B. Functionele gebieden doen, in tegenstelling tot alle andere 
-BGT-vlakobjecten, niet mee in de topologische structuur. Zij liggen als het ware
-als een overlay over andere BGT-objecten. Bij de kering kan het bijvoorbeeld
-gaan om dijken die zijn samengesteld uit terreindelen en wegdelen. De begrenzing
-van functionele gebieden hoeft niet samen te vallen met de begrenzing van
-objecten. </mark> Dit is dan toch wel topologisch? Overlay = overlapt? Wat bedoelt men hier?
+Objecten die virtuele ruimte zijn, doen, in tegenstelling tot alle objecten die Reeël object zijn én BGT-vlakobjecten, niet mee in de topologische structuur. Virtuele ruimte objecten liggen als een overlay over andere BGT-objecten. De begrenzing van virtuele ruimte hoeft niet samen te vallen met de begrenzing van
+reeële objecten.
 
 <mark> Wat moeten we hiermee? een nen2660:RuimtelijkGebied nen2660:isBegrensdDoor een nen2660:ReeelObject en een nen2660:RuimtelijkGebied nen2660:bevat een nen2660:ReeelObject. Kunnen we hier wat mee?  
 nen2660-term:SpatialRegion 
@@ -171,6 +142,40 @@ GM_Circle is niet toegestaan.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Topologie in 3D
 =========
 
@@ -201,11 +206,10 @@ een weg zich opsplitst in meerdere wegdelen met eigen identificaties als deze
 over een brug loopt, ook al zijn de rest van de kenmerken gelijk.
 
 
-<mark> Bij LOD 1 - LOD 3 is er een oplossing? </mark>
-
 In het 3D geval dat elk object een 3D Solid is: 
 -> Elke Solid is Geldig 
 -> Solids mogen niet ongewenst overlappen  
+
 
 -> 3D topologie is nog niet opgelost (nog geen oplossing voor). Wiskundigen (computational geometry)
         -> computation fluid dynamics (Github City for CFD (TU Delft)) stad en terrein als een waterdichte mesh. 
@@ -271,3 +275,10 @@ Kennis te gebruiken uit: https://docs.geostandaarden.nl/3dbv/basis-al-prod-20201
 
 
 https://www.pdok.nl/-/verbetering-kwaliteit-3d-basisvoorziening
+
+
+
+Alles wat bindend is, in de standaard. Alles wat uitleg is daarbuiten. 
+
+-> Standaard IMGEO-3D 
+-> Praktijkrichtlijn of een handreiking (nagaan welke dit wordt)
