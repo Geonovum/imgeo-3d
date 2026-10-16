@@ -138,7 +138,19 @@ let respecConfig = {
     publisher: "Computers, Environment and Urban Systems",
     date: "2016",
     href: "https://doi.org/10.1016/j.compenvurbsys.2016.04.005"
-  }
+  },
+    vanderVaart2026: {
+    id: "vanderVaart2026",
+    title: "Defining LoDs to support BIM-based 3D building abstractions in GI",
+    authors: [
+      "van der Vaart, J.",
+      "Arroyo Ohori, K.",
+      "Stoter, J.",
+      "El Yamani, S."
+    ],
+    publisher: "Copernicus Publications",
+    date: "2026",
+    href: "https://doi.org/10.5194/isprs-archives-XLVIII-3-W4-2025-55-2026"
   }
 };
 
