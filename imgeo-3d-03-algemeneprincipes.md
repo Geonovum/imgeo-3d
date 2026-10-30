@@ -90,6 +90,13 @@ namelijk benadering van de boog met:
 Voor het weergeven van cirkels kan men gebruik maken van twee bogen. Gebruik van
 GM_Circle is niet toegestaan.
 
+<mark> De encodings van IndoorGML 2.0 (Part 2a XML, 2b JSON, 2c SQL) gaan in publieke consultatie en OAB-review, met vaststelling in maart 2027 als doel. De JSON-encoding gebruikt JSON-FG voor 3D-geometrie. </mark> 
+<mark> Aansluiten op IndoorGML hiervoor? Eens bekijken. 
+
+IndoorJSON use JSON-FG-compatible geometry objects for the geometry representation. This is necessary because indoor spaces require 3D geometry, including solid geometry. The current IndoorJSON core schema references JSON-FG geometry schemas for geometry2D andgeometry3D, including Polygon and Polyhedron for CellSpace.
+
+</mark>
+<mark> Ook kijken naar 3DIM vraagt de TC om 3D Tiles 2.0 als Community Standard vast te stellen; ratificatie wordt in Q4 2026 verwacht. De tileset is nu zelf een glTF 2.1-bestand en ondersteunt nieuwe content zoals Gaussian splats, vector tiles, voxels en tijdsafhankelijke tiles. Japan presenteerde PLATEAU, waarin 195 organisaties 3D-stadsmodellen in CityGML als open data hebben gepubliceerd. </mark>
 
 ## Topologie in 3D 
 
