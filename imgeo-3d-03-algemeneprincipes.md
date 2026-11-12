@@ -169,25 +169,36 @@ boven het daarna vermelde object of domein­waar­de.
 Voor het derde punt, de visualisatie van de BGT, gelden afwijkende regels. Deze
 regels zijn opgenomen in hoofdstuk 5 van het document Visualisatieregels BGT en
 IMGeo.
-</.mark>
-
-<mark>
-De BGT stelt eisen aan de positionele nauwkeurigheid, waarmee een object wordt ingewonnen en vastgelegd. Onder positionele nauwkeurigheid verstaat men de mate waarin de opgeslagen coördinaten overeenkomen met de waarden in de werkelijkheid of de geaccepteerde afwijking. De positionele nauwkeurigheid in de BGT is de combinatie van precisie en betrouwbaarheid, ook wel geometrische nauwkeurigheid genoemd.
-
-De positionele nauwkeurigheid van een object wordt beschreven op het niveau van het objecttype. Hiermee wordt aan elk object binnen dat objecttype een nauwkeurigheidseis gesteld. De BGT hanteert voor het beschrijven van de positionele nauwkeurigheid de relatieve precisie. Een uitgebreide theoretische beschrijving hiervan staat in het Handboek Technische Werkzaamheden van het Kadaster uit 1996 (HTW 1996). Bij de precisiebeschrijving wordt onderscheid gemaakt tussen de relatieve precisie van coördinaten ten gevolge van de ontstaanswijze (het meet-en verwerkingsproces) en de idealisatie. Toepassing van het meet- en verwerkingsproces levert de vereiste minimumwaarde op. Relatieve precisie geldt alleen voor nabijgelegen punten.
-
-Hieronder staan de waarden voor de minimale toegestane kwaliteit voor de positionele nauwkeurigheid van 30 en 60 cm. Het zijn afrondingen van de in de HTW 1996 vermelde waarden voor de lengte van de halve lange as van de relatieve standaardellips tussen twee punten in.
-
-Objecten met een hoge positionele nauwkeurigheid: 20 cm x √2 = 28,3 cm, afgerond: 30 cm;
-
-Objecten met een lage positionele nauwkeurigheid: 40 cm x √2 = 56,6 cm, afgerond: 60 cm.
-
-De punten in het veld dienen te zijn ingemeten en in het bestand te zijn verwerkt volgens de regels, zoals beschreven in de HTW van 1996, inclusief het supplement voor detailmeten met GPS.
-
-De tabel hieronder vermeldt de minimale waarden van de toegestane kwaliteit voor de positionele nauw­keu­rig­heid per objecttype. In de laatste kolom staan de waarden voor idealisatie per objecttype. Een bronhouder is volledig vrij om voor zijn eigen objecten hogere nauwkeurigheidseisen te hanteren dan voor de BGT zijn vereist.
-
-Omdat de BGT bestaat uit een verzameling objecten wordt in de tabel per object een generieke waarde voor de maximaal toegestane afwijking vermeld tussen nabijgelegen punten met dezelfde idealisatiewaarden en van hetzelfde object.
-
-
-DIT MOET ER UIT
 </mark>
+
+## Identificatie 
+De identificatie blijft zoals het is in de BGT/IMGeo. Een object krijgt alleen een 3D representatie erbij. Dit betekent niet dat het ID verandert. 
+
+## BAG-identificatie
+Geen wijzigingen 
+
+## Gebeurtenissen 
+Geen wijzigingen 
+
+## Levensduur en historie 
+Geen wijzigingen t.o.v. de 2D beschrijving 
+
+## Toekomstige topografie 
+Geen wijzigingen t.o.v. de 2D beschrijving 
+
+## Meetgegevens 
+De principes voor meetgegevens van de 2D beschrijving gelden hier ook.
+
+Aanvullend voor 3D geldt dat de geometrie het resultaat kan zijn van de combinatie van twee of meer onafhankelijke bronnen. Bijvoorbeeld: de x,y-ligging komt uit de 2D-registratie (BGT/BAG) en de z-waarde uit een hoogtebron zoals AHN. De kwaliteit van een 3D-plaatsbepalingspunt wordt daarom niet als één waarde vastgelegd, maar gesplitst in een horizontale en een verticale nauwkeurigheid. De horizontale nauwkeurigheid is gelijk aan die van het oorspronkelijke 2D-plaatsbepalingspunt. De verticale nauwkeurigheid wordt bepaald door de nauwkeurigheid van de hoogtebron, de doorwerking van de horizontale afwijking bij hellende vlakken en de afwijking die ontstaat door de gekozen afleidingsmethode (bijvoorbeeld extrusie naar één representatieve hoogte). Bij onafhankelijke bronnen worden deze afwijkingen kwadratisch gecombineerd. Naast de bestaande meetgegevens worden voor de z-waarde de hoogtebron, de inwinningsdatum van die bron en de afleidingsmethode vastgelegd, zodat de herkomst van de 3D-geometrie herleidbaar blijft.
+
+![Visualisatie van de berekende referentiehoogte gebaseerd op percentiel en de hoogte punten die gebruikt zijn in de calculatie.](./media/Beeldmateriaal/referentiehoogte_percentiel_en_hoogtepunten.png)
+bron: [A MULTI-HEIGHT LOD1 MODEL OF ALL BUILDINGS IN THE NETHERLANDS](https://isprs-annals.copernicus.org/articles/IV-4-W8/51/2019/) 
+
+![Gebruik van meerdere onafhankelijke bronnen bij het vormen van 3D](./media/Beeldmateriaal/vormen_van_3D_met_behulp_van_meerdere_bronnen.png)
+bron: Handreikingaanbesteding3dCityGML IMGeo 2.0
+
+## Plaatsbepalingspunt
+<mark> De plaatsbepalingspunten gelden ook in 3D. Voor de idealiseerbare objecten. </mark>
+
+<mark> Hoe om te gaan met plaatsbepalingspunten die het resultaat zijn van 2 of meer bronnen? De BGT-BAG en de AHN? </mark>
+
