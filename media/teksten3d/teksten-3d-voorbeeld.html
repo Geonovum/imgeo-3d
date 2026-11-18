@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teksten in 3D</title>
+  <style>
+    :root {
+      --bg: #eef1f4;
+      --panel: rgba(255, 255, 255, 0.92);
+      --text: #1d2733;
+      --muted: #5b6673;
+      --accent: #0b6fa4;
+      --border: #c9d1da;
+    }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow: hidden; }
+    #scene { position: absolute; inset: 0; }
+    #ui { position: absolute; top: 12px; left: 12px; right: 12px; max-width: 520px;
+      background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 12px; font-size: 14px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    #ui h1 { font-size: 15px; margin: 0 0 6px; }
+    #ui .knoppen { display: flex; flex-wrap: wrap; gap: 6px; }
+    #ui button { font: inherit; padding: 5px 10px; border: 1px solid var(--border);
+      border-radius: 6px; background: #fff; color: var(--text); cursor: pointer; }
+    #ui button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+    #uitleg { margin: 8px 0 0; color: var(--muted); line-height: 1.4; }
+    #hint { position: absolute; bottom: 8px; right: 12px; font-size: 12px; color: var(--muted); }
+    body.zonder-ui #ui, body.zonder-ui #hint { display: none; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="scene"></div>
+  <div id="ui">
+    <h1>Teksten in 3D: drie manieren van weergeven</h1>
+    <div class="knoppen" role="group" aria-label="Weergave">
+      <button data-modus="plat">Platte tekst</button>
+      <button data-modus="billboard">Billboard</button>
+      <button data-modus="callout">Callout line</button>
+      <button data-modus="alles">Alle drie</button>
+    </div>
+    <div class="knoppen" role="group" aria-label="Camera" style="margin-top:6px">
+      <button data-stand="overzicht">Overzicht</button>
+      <button data-stand="appartement">Complex voorzijde</button>
+      <button data-stand="achterzijde">Complex achterzijde</button>
+    </div>
+    <p id="uitleg"></p>
+  </div>
+  <div id="hint">Slepen: draaien · Scrollen: zoomen · Rechts slepen: verschuiven</div>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    // ---------------------------------------------------------------
+    // Fictieve BGT-gegevens in lokale meters (x = oost, y = noord).
+    // Een tekst heeft een punt en een rotatie (graden, tegen de klok in
+    // vanaf het oosten), net als openbareruimtelabel en
+    // nummeraanduidingreeks in de BGT.
+    // ---------------------------------------------------------------
+    const wegen = [
+      { xmin: -12, xmax: 62, ymin: -5, ymax: 5 },   // Stationsstraat
+      { xmin: 40, xmax: 50, ymin: 5, ymax: 42 },    // Kerkstraat
+      { xmin: 40, xmax: 50, ymin: -42, ymax: -5 }
+    ];
+
+    const panden = [
+      { xmin: 0,  xmax: 10, ymin: 8,   ymax: 20,  hoogte: 9,  tekst: '1-3' },
+      { xmin: 11, xmax: 21, ymin: 8,   ymax: 20,  hoogte: 13, tekst: '5-9' },
+      { xmin: 22, xmax: 34, ymin: 8,   ymax: 20,  hoogte: 7,  tekst: '11-15' },
+      { xmin: 0,  xmax: 12, ymin: -20, ymax: -8,  hoogte: 11, tekst: '2-6' },
+      { xmin: 13, xmax: 23, ymin: -20, ymax: -8,  hoogte: 16, tekst: '8-12' },
+      { xmin: 24, xmax: 34, ymin: -20, ymax: -8,  hoogte: 8,  tekst: '14-18' }
+    ];
+
+    // Appartementencomplex aan de Kerkstraat: 5 woonlagen, 4 appartementen per laag
+    // (2 aan de voorkant/straatkant, 2 aan de achterkant). De huisnummers lopen
+    // door van 1 t/m 20. Elk appartement (verblijfsobject) heeft een eigen
+    // huisnummer en een 3D-punt op de vloerhoogte van zijn eigen laag.
+    const complex = { xmin: 53, xmax: 65, ymin: 10, ymax: 26, lagen: 5, laaghoogte: 3 };
+    complex.hoogte = complex.lagen * complex.laaghoogte;
+    complex.xmid = (complex.xmin + complex.xmax) / 2;
+    complex.ymid = (complex.ymin + complex.ymax) / 2;
+    const appartementen = [];
+    let nummer = 1;
+    for (let laag = 0; laag < complex.lagen; laag++) {
+      const delen = [
+        { zijde: 'voor',   xmin: complex.xmin, xmax: complex.xmid, ymin: complex.ymin, ymax: complex.ymid },
+        { zijde: 'voor',   xmin: complex.xmin, xmax: complex.xmid, ymin: complex.ymid, ymax: complex.ymax },
+        { zijde: 'achter', xmin: complex.xmid, xmax: complex.xmax, ymin: complex.ymin, ymax: complex.ymid },
+        { zijde: 'achter', xmin: complex.xmid, xmax: complex.xmax, ymin: complex.ymid, ymax: complex.ymax }
+      ];
+      for (const d of delen) {
+        appartementen.push({
+          laag,
+          zijde: d.zijde,
+          tekst: String(nummer++),
+          x: (d.xmin + d.xmax) / 2,
+          y: (d.ymin + d.ymax) / 2,
+          vloer: laag * complex.laaghoogte
+        });
+      }
+    }
+
+    const openbareruimtelabels = [
+      { tekst: 'Stationsstraat', x: 18, y: 0,  rotatie: 0 },
+      { tekst: 'Kerkstraat',     x: 45, y: 34, rotatie: 90 }
+    ];
+
+    // BGT (x, y, hoogte) naar three.js (x, y-omhoog, z-zuid)
+    const naar3D = (x, y, h = 0) => new THREE.Vector3(x, h, -y);
+
+    // Hellend maaiveld: loopt op naar het oosten en noorden, met een lichte golving.
+    // Hoogte in meters ten opzichte van het laagste deel van de scène.
+    const maaiveldHoogte = (x, y) =>
+      0.16 * x + 0.06 * y + 1.5 * Math.sin(x / 15) * Math.cos(y / 20);
+
+    // Legt de hoekpunten van een (wereld)geometrie op het maaiveld, met een kleine verhoging
+    function draperen(geometrie, verhoging = 0) {
+      const pos = geometrie.attributes.position;
+      for (let i = 0; i < pos.count; i++) {
+        pos.setY(i, maaiveldHoogte(pos.getX(i), -pos.getZ(i)) + verhoging);
+      }
+      pos.needsUpdate = true;
+      geometrie.computeVertexNormals();
+      return geometrie;
+    }
+
+    // Referentiehoogte (maaiveld op het midden) en laagste maaiveldpunt van een vlak
+    function hoogtes(o) {
+      const cx = (o.xmin + o.xmax) / 2, cy = (o.ymin + o.ymax) / 2;
+      const hoeken = [[o.xmin, o.ymin], [o.xmin, o.ymax], [o.xmax, o.ymin], [o.xmax, o.ymax]]
+        .map(([x, y]) => maaiveldHoogte(x, y));
+      return { ref: maaiveldHoogte(cx, cy), laagste: Math.min(...hoeken) - 0.3 };
+    }
+
+    // Het complex staat op zijn referentiehoogte; vloeren tellen daarvandaan
+    {
+      const { ref, laagste } = hoogtes(complex);
+      complex.basis = ref;
+      complex.laagste = laagste;
+    }
+
+    // ---------------------------------------------------------------
+    // Scène
+    // ---------------------------------------------------------------
+    const params = new URLSearchParams(location.search);
+    if (params.get('ui') === '0') document.body.classList.add('zonder-ui');
+
+    const container = document.getElementById('scene');
+    const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.shadowMap.enabled = true;
+    container.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xdfe7ee);
+
+    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.5, 1000);
+    camera.position.set(-16, 72, 58);
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(28, 5, -6);
+    controls.maxPolarAngle = Math.PI / 2 - 0.05;
+    controls.update();
+
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x8a9a7a, 0.9));
+    const zon = new THREE.DirectionalLight(0xffffff, 1.1);
+    zon.position.set(-40, 80, 30);
+    zon.castShadow = true;
+    zon.shadow.mapSize.set(2048, 2048);
+    Object.assign(zon.shadow.camera, { left: -70, right: 70, top: 70, bottom: -70 });
+    scene.add(zon);
+
+    // Maaiveld (hellend terrein)
+    const maaiveld = new THREE.Mesh(
+      draperen(new THREE.PlaneGeometry(200, 200, 120, 120).rotateX(-Math.PI / 2).translate(25, 0, 0)),
+      new THREE.MeshLambertMaterial({ color: 0xb9c9a3 })
+    );
+    maaiveld.receiveShadow = true;
+    scene.add(maaiveld);
+
+    // Wegen, gedrapeerd over het maaiveld
+    const wegMat = new THREE.MeshLambertMaterial({ color: 0x8c9096, polygonOffset: true, polygonOffsetFactor: -1 });
+    for (const w of wegen) {
+      const b = w.xmax - w.xmin, d = w.ymax - w.ymin;
+      const geo = new THREE.PlaneGeometry(b, d, Math.ceil(b), Math.ceil(d))
+        .rotateX(-Math.PI / 2)
+        .translate((w.xmin + w.xmax) / 2, 0, -(w.ymin + w.ymax) / 2);
+      const m = new THREE.Mesh(draperen(geo, 0.05), wegMat);
+      m.receiveShadow = true;
+      scene.add(m);
+    }
+
+    // Panden (LOD1-blokken). De hoogte telt vanaf de referentiehoogte (maaiveld op het
+    // midden); de onderkant loopt door tot het laagste maaiveldpunt, zodat het pand
+    // nergens boven het terrein zweeft.
+    const pandMat = new THREE.MeshLambertMaterial({ color: 0xd8c3a5 });
+    const dakMat = new THREE.MeshLambertMaterial({ color: 0xa65b4b });
+    for (const p of panden) {
+      const b = p.xmax - p.xmin, d = p.ymax - p.ymin;
+      const { ref, laagste } = hoogtes(p);
+      p.dak = ref + p.hoogte;
+      const m = new THREE.Mesh(new THREE.BoxGeometry(b, p.dak - laagste, d),
+        [pandMat, pandMat, dakMat, pandMat, pandMat, pandMat]);
+      m.position.copy(naar3D((p.xmin + p.xmax) / 2, (p.ymin + p.ymax) / 2, (p.dak + laagste) / 2));
+      m.castShadow = m.receiveShadow = true;
+      scene.add(m);
+      const rand = new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry),
+        new THREE.LineBasicMaterial({ color: 0x6b5a48 }));
+      rand.position.copy(m.position);
+      scene.add(rand);
+    }
+
+    // Appartementencomplex: half doorzichtig, met vloeren en woningscheidingen zichtbaar
+    {
+      const b = complex.xmax - complex.xmin, d = complex.ymax - complex.ymin;
+      const midden = naar3D(complex.xmid, complex.ymid, 0);
+      const bodem = complex.laagste, top = complex.basis + complex.hoogte;
+      const schil = new THREE.Mesh(new THREE.BoxGeometry(b, top - bodem, d),
+        new THREE.MeshLambertMaterial({ color: 0xc9d6e3, transparent: true, opacity: 0.35, depthWrite: false }));
+      schil.position.copy(midden).setY((top + bodem) / 2);
+      scene.add(schil);
+      const lijnMat = new THREE.LineBasicMaterial({ color: 0x46596b });
+      const rand = new THREE.LineSegments(new THREE.EdgesGeometry(schil.geometry), lijnMat);
+      rand.position.copy(schil.position);
+      scene.add(rand);
+      const vloerMat = new THREE.MeshLambertMaterial({ color: 0x9fb0c0, transparent: true, opacity: 0.55, depthWrite: false, side: THREE.DoubleSide });
+      for (let laag = 1; laag < complex.lagen; laag++) {
+        const vloer = new THREE.Mesh(new THREE.PlaneGeometry(b, d), vloerMat);
+        vloer.rotation.x = -Math.PI / 2;
+        vloer.position.copy(midden).setY(complex.basis + laag * complex.laaghoogte);
+        scene.add(vloer);
+      }
+      // Woningscheidende wanden: noord/zuid en voor/achter
+      const wand = new THREE.Mesh(new THREE.PlaneGeometry(b, complex.hoogte), vloerMat);
+      wand.position.copy(naar3D(complex.xmid, complex.ymid, complex.basis + complex.hoogte / 2));
+      scene.add(wand);
+      const wand2 = new THREE.Mesh(new THREE.PlaneGeometry(d, complex.hoogte), vloerMat);
+      wand2.rotation.y = Math.PI / 2;
+      wand2.position.copy(naar3D(complex.xmid, complex.ymid, complex.basis + complex.hoogte / 2));
+      scene.add(wand2);
+      const dak = new THREE.Mesh(new THREE.PlaneGeometry(b, d), dakMat);
+      dak.rotation.x = -Math.PI / 2;
+      dak.position.copy(midden).setY(top + 0.02);
+      scene.add(dak);
+    }
+
+    // ---------------------------------------------------------------
+    // Tekst als textuur (canvas)
+    // ---------------------------------------------------------------
+    function maakTekstTextuur(tekst, stijl) {
+      const px = 96;
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const font = `${stijl.vet ? 'bold ' : ''}${px}px system-ui, "Segoe UI", Roboto, sans-serif`;
+      ctx.font = font;
+      const marge = stijl.achtergrond ? px * 0.35 : px * 0.15;
+      canvas.width = Math.ceil(ctx.measureText(tekst).width + marge * 2);
+      canvas.height = Math.ceil(px * 1.35);
+      ctx.font = font;
+      if (stijl.achtergrond) {
+        ctx.fillStyle = stijl.achtergrond;
+        ctx.strokeStyle = stijl.kader || stijl.achtergrond;
+        ctx.lineWidth = 6;
+        const r = 18;
+        ctx.beginPath();
+        ctx.roundRect(3, 3, canvas.width - 6, canvas.height - 6, r);
+        ctx.fill();
+        ctx.stroke();
+      }
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      if (stijl.halo) {
+        ctx.lineWidth = 14;
+        ctx.strokeStyle = stijl.halo;
+        ctx.lineJoin = 'round';
+        ctx.strokeText(tekst, canvas.width / 2, canvas.height / 2);
+      }
+      ctx.fillStyle = stijl.kleur;
+      ctx.fillText(tekst, canvas.width / 2, canvas.height / 2);
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      return { tex, aspect: canvas.width / canvas.height };
+    }
+
+    const STIJL_STRAAT = { kleur: '#1d2733', halo: '#ffffff', vet: true };
+    const STIJL_NUMMER = { kleur: '#3b2a1e', halo: '#f4ead9' };
+    const STIJL_LABEL = { kleur: '#1d2733', achtergrond: '#ffffff', kader: '#0b6fa4', vet: true };
+
+    // 1. Platte tekst: ligt in het vlak, gebruikt het punt en de rotatie uit de BGT.
+    //    Met volgTerrein wordt de tekst over het hellende maaiveld gedrapeerd.
+    function platteTekst(tekst, punt, rotatieGraden, hoogteTekst, stijl, volgTerrein = false) {
+      const { tex, aspect } = maakTekstTextuur(tekst, stijl);
+      const geo = new THREE.PlaneGeometry(hoogteTekst * aspect, hoogteTekst, 32, 4)
+        .rotateX(-Math.PI / 2)
+        .rotateY(THREE.MathUtils.degToRad(rotatieGraden))
+        .translate(punt.x, punt.y, punt.z);
+      if (volgTerrein) draperen(geo, 0.12);
+      return new THREE.Mesh(geo,
+        new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false,
+          polygonOffset: true, polygonOffsetFactor: -4 }));
+    }
+
+    // 1b. Platte tekst op een gevel (verticaal vlak). Standaard gericht naar het westen
+    //     (de straat); met richting 'oost' op de achtergevel. Alleen zichtbaar vanaf de
+    //     kant waar de gevel naartoe kijkt.
+    function gevelTekst(tekst, punt, hoogteTekst, stijl, richting = 'west') {
+      const { tex, aspect } = maakTekstTextuur(tekst, stijl);
+      const mesh = new THREE.Mesh(
+        new THREE.PlaneGeometry(hoogteTekst * aspect, hoogteTekst),
+        new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false })
+      );
+      mesh.position.copy(punt);
+      mesh.rotation.y = richting === 'oost' ? Math.PI / 2 : -Math.PI / 2;
+      return mesh;
+    }
+
+    // 2. Billboard: staat rechtop en draait altijd naar de kijker
+    function billboard(tekst, punt, hoogteTekst, stijl) {
+      const { tex, aspect } = maakTekstTextuur(tekst, stijl);
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, depthWrite: false }));
+      s.scale.set(hoogteTekst * aspect, hoogteTekst, 1);
+      s.center.set(0.5, 0);
+      s.position.copy(punt);
+      return s;
+    }
+
+    // 3. Callout line: label op afstand, met een lijn naar het punt; altijd zichtbaar.
+    //    'verschuiving' is een getal (omhoog) of een vector (bijv. zijwaarts uit de gevel).
+    function callout(tekst, punt, verschuiving, hoogteTekst, stijl) {
+      const g = new THREE.Group();
+      const boven = punt.clone().add(typeof verschuiving === 'number'
+        ? new THREE.Vector3(0, verschuiving, 0) : verschuiving);
+      const lijn = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints([punt, boven]),
+        new THREE.LineBasicMaterial({ color: 0x0b6fa4, depthTest: false })
+      );
+      lijn.renderOrder = 10;
+      const stip = new THREE.Mesh(new THREE.SphereGeometry(0.45, 16, 12),
+        new THREE.MeshBasicMaterial({ color: 0x0b6fa4, depthTest: false }));
+      stip.position.copy(punt);
+      stip.renderOrder = 10;
+      const { tex, aspect } = maakTekstTextuur(tekst, stijl);
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, depthTest: false, depthWrite: false }));
+      s.scale.set(hoogteTekst * aspect, hoogteTekst, 1);
+      s.center.set(0.5, 0);
+      s.position.copy(boven);
+      s.renderOrder = 11;
+      g.add(lijn, stip, s);
+      return g;
+    }
+
+    // ---------------------------------------------------------------
+    // Lagen per weergave
+    // ---------------------------------------------------------------
+    const lagen = { plat: new THREE.Group(), billboard: new THREE.Group(), callout: new THREE.Group() };
+    Object.values(lagen).forEach(l => scene.add(l));
+
+    for (const l of openbareruimtelabels) {
+      const h = maaiveldHoogte(l.x, l.y);
+      lagen.plat.add(platteTekst(l.tekst, naar3D(l.x, l.y, h), l.rotatie, 4, STIJL_STRAAT, true));
+      lagen.billboard.add(billboard(l.tekst, naar3D(l.x, l.y, h + 0.3), 3.5, STIJL_STRAAT));
+      lagen.callout.add(callout(l.tekst, naar3D(l.x, l.y, h + 0.05), 14, 2.6, STIJL_LABEL));
+    }
+
+    for (const p of panden) {
+      const cx = (p.xmin + p.xmax) / 2, cy = (p.ymin + p.ymax) / 2;
+      // In 2D ligt het punt op maaiveld binnen het pand; in 3D wordt het naar het dak getild.
+      lagen.plat.add(platteTekst(p.tekst, naar3D(cx, cy, p.dak + 0.05), p.rotatie || 0, 2.4, STIJL_NUMMER));
+      lagen.billboard.add(billboard(p.tekst, naar3D(cx, cy, p.dak + 0.4), 2.2, STIJL_NUMMER));
+      lagen.callout.add(callout(p.tekst, naar3D(cx, cy, p.dak), 7, 2.2, STIJL_LABEL));
+    }
+
+    // Appartementen: per woning een huisnummer op de hoogte van de eigen woonlaag
+    const STIJL_APP = { kleur: '#13324a', halo: '#ffffff', vet: true };
+    const STIJL_APP_LABEL = { kleur: '#13324a', achtergrond: '#ffffff', kader: '#0b6fa4', vet: true };
+    for (const a of appartementen) {
+      const vloer = complex.basis + a.vloer;
+      const midLaag = vloer + complex.laaghoogte / 2;
+      const voor = a.zijde === 'voor';
+      // Platte tekst: op de eigen gevel (voorgevel aan de straat of achtergevel), ter hoogte van de woonlaag
+      lagen.plat.add(gevelTekst(a.tekst,
+        naar3D(voor ? complex.xmin - 0.05 : complex.xmax + 0.05, a.y, midLaag),
+        1.4, STIJL_APP, voor ? 'west' : 'oost'));
+      // Billboard: op het 3D-punt van de woning zelf, binnen het (doorzichtige) gebouw
+      lagen.billboard.add(billboard(a.tekst, naar3D(a.x, a.y, vloer + 0.6), 1.2, STIJL_APP));
+      // Callout line: lijn van het 3D-punt naar een label vóór de voor- of achtergevel, per laag gestapeld
+      const uit = voor ? complex.xmin - a.x - 3 : complex.xmax - a.x + 3;
+      lagen.callout.add(callout(a.tekst, naar3D(a.x, a.y, midLaag),
+        new THREE.Vector3(uit, 0, 0), 1.2, STIJL_APP_LABEL));
+    }
+
+    const uitleg = {
+      plat: 'Platte tekst: de tekst ligt in het vlak van de weg of het dak, op het punt en met de rotatie uit de BGT. Van bovenaf goed leesbaar, schuin of vanaf de grond slecht leesbaar. Bij het appartementencomplex staan de huisnummers per woonlaag op de eigen gevel: voorwoningen op de voorgevel, achterwoningen op de achtergevel.',
+      billboard: 'Billboard: de tekst staat rechtop en draait altijd naar de kijker. Vanuit elke hoek leesbaar, maar de BGT-rotatie heeft geen betekenis meer en panden kunnen de tekst afdekken. Bij het appartementencomplex staat elk huisnummer op het 3D-punt van de woning zelf.',
+      callout: 'Callout line: het label zweeft naast het object en een lijn wijst naar het punt. Altijd zichtbaar en eenduidig gekoppeld, maar bij veel labels wordt het beeld druk. Bij het appartementencomplex staan de labels per laag gestapeld vóór de voor- of achtergevel.',
+      alles: 'Alle drie de weergaven tegelijk, om ze te vergelijken.'
+    };
+
+    const knoppen = document.querySelectorAll('#ui button[data-modus]');
+    function zetModus(modus) {
+      if (!uitleg[modus]) modus = 'plat';
+      for (const [naam, laag] of Object.entries(lagen)) laag.visible = modus === 'alles' || modus === naam;
+      knoppen.forEach(k => k.setAttribute('aria-pressed', String(k.dataset.modus === modus)));
+      document.getElementById('uitleg').textContent = uitleg[modus];
+    }
+    knoppen.forEach(k => k.addEventListener('click', () => zetModus(k.dataset.modus)));
+    zetModus(params.get('modus') || 'plat');
+
+    // Camerastanden: overzicht of ingezoomd op het appartementencomplex
+    const standen = {
+      overzicht: { positie: camera.position.clone(), doel: controls.target.clone() },
+      appartement: { positie: new THREE.Vector3(32, complex.basis + 20, 10), doel: new THREE.Vector3(59, complex.basis + 6, -18) },
+      achterzijde: { positie: new THREE.Vector3(86, complex.basis + 20, -46), doel: new THREE.Vector3(59, complex.basis + 6, -18) }
+    };
+    const standKnoppen = document.querySelectorAll('#ui button[data-stand]');
+    function zetStand(naam) {
+      const s = standen[naam] || standen.overzicht;
+      camera.position.copy(s.positie);
+      controls.target.copy(s.doel);
+      controls.update();
+      standKnoppen.forEach(k => k.setAttribute('aria-pressed', String(k.dataset.stand === naam)));
+    }
+    standKnoppen.forEach(k => k.addEventListener('click', () => zetStand(k.dataset.stand)));
+    zetStand(params.get('stand') || 'overzicht');
+
+    // Optionele camerastand via URL, bijv. ?camera=-28,52,62
+    if (params.get('camera')) {
+      const [x, y, z] = params.get('camera').split(',').map(Number);
+      if ([x, y, z].every(Number.isFinite)) { camera.position.set(x, y, z); controls.update(); }
+    }
+
+    function opnieuwSchalen() {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+    window.addEventListener('resize', opnieuwSchalen);
+
+    renderer.setAnimationLoop(() => {
+      controls.update();
+      renderer.render(scene, camera);
+    });
+  </script>
+</body>
+</html>

@@ -66,3 +66,37 @@ positionele nauwkeurigheid de relatieve precisie.
 
 Tabel 1 Per objecttype generieke waarden voor actualiteit, positionele nauwkeurigheid en idealisatie
 
+**Precisie** Is niet anders dan in 2D.
+
+**Betrouwbaarhied** Is niet anders dan in 2D
+
+**Idealisatie**  Is niet anders dan in 2D 
+
+
+### Relatie Nauwkeurigheid – precisie en plaatsbepalingspunten
+Zoals in 2D BGT/IMGeo; geen 3D-specifieke regels
+
+
+#### Volledigheid
+Onder volledigheid verstaat men de mate waarin BGT-objecten die in werkelijkheid voorkomen in het bestand zijn opgenomen. Voor alle vlakobjecten op maaiveldniveau in de 3D-BGT geldt per bronhouder een volledigheidseis van 100%. 
+Voor alle blokmodellen boven maaiveldniveau in LOD 1.2, 1.3 en 2.2 geldt een 0% of 100% volledigheidseis per object-type. Dat wil zeggen: óf alle objecten die in werkelijkheid voorkomen van een specifiek type zijn in het bestand opgenomen, of alle objecten zijn niet opgenomen. Voor de hogere Levels of Detail die aansluiten bij BIM-inwinning gelden geen volledigheidseisen. Dit is optioneel per object-instantie.    
+
+
+#### Logische consistentie
+Als de 3D-BGT volledig is gevuld, is het op 3D-maaiveldniveau (niveau 0) voor Nederland gebiedsdekkend. Regels voor de logische consistentie zijn al beschreven in paragraaf 3.7.
+
+
+#### Tijd
+Zoals in 2D BGT/IMGeo; geen 3D-specifieke regels
+
+### Tijdnauwkeurigheid
+Zoals in 2D BGT/IMGeo; geen 3D-specifieke regels
+
+### Tijdconsistentie
+Zoals in 2D BGT/IMGeo; geen 3D-specifieke regels
+
+### Tijdgeldigheid
+Zoals in 2D BGT/IMGeo; geen 3D-specifieke regels
+
+#### Thematische nauwkeurigheid
+Zoals in 2D BGT/IMGeo; geen 3D-specifieke regels
