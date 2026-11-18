@@ -16,8 +16,12 @@ De domeinmodellen BGT 1.2 en IMGEO 2.2 bevatten voornamelijk fysieke, concrete t
 
 ![Voorstelling van objecttypen BGT en IMGEO onder de NEN3610:2022](media/BGT-NEN3610-2022-mapping.png "Voorstelling van hoe een mapping van (deels toekomstig) BGT en IMGEO zou kunnen zijn onder het NEN3610:2022 raamwerk")
 
+<mark> met marlies bespreken </mark>
+
 ## 3D Dekking
 IMGeo 3D kent dezelfde dekking als IMGEO en BGT in het horizontale vlak. In het verticale vlak is de dekking zowel bovengronds als ondergronds. Deze dekking beschrijft de ruimtelijke scope van het 3D model en impliceert niet dat binnen deze gehele ruimte daadwerkelijk objecten zijn gemodelleerd.
+
+<mark> hoe hoog of hoe diep mag je? Voorstel doen vanuit logica</mark>
 
 ## IMGeo-objecten in de BGT
 nvt...?
@@ -40,5 +44,8 @@ Ongeacht het Level Of Detail dat gebruikt wordt voor de geometrische representat
 
 ## Geen inhoud van de BGT: macro-objecten en micro-objecten
 
-nader te bepalen
+nader te bepalen 
+
+<mark> Met Marlies en Daoud IBRO/VNG (Gerlof) </mark>
+
 

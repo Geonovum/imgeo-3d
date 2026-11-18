@@ -22,19 +22,19 @@ Kruinlijngeometrie vervalt in IMGeo-3D.
 
 ## Functioneel gebied
 
-In IMGeo-3D valt functioneel gebied onder het concept Virtuele ruimte. Dit sluit aan op CityGML3.0  die onderscheid maakt in Ruimte die kan worden geclassificeerd als Ingenomen Ruimte(OccupiedSpace) en Vrije Ruimte (UnoccupiedSpace) waarbij de ruimte met de properties class, functie en gebruik gespecificeerd kunnen worden.
+In IMGeo-3D valt functioneel gebied onder het concept Virtuele ruimte. Dit sluit aan op CityGML3.0 die onderscheid maakt in Ruimte die kan worden geclassificeerd als Ingenomen Ruimte(OccupiedSpace) en Vrije Ruimte (UnoccupiedSpace) waarbij de ruimte met de properties class, functie en gebruik gespecificeerd kunnen worden.
+
+<mark> Bespreken met Marlies en Daoud </mark>
 
 ## Coördinaat-referentiesysteem
 Het toegepaste coördinaatsysteem voor IMGEO-3D is een samengesteld CRS voor Nederland met de naam RDNAP(EPSG:7415). Dit coördinaatsysteem is een samenstelling van het Geprojecteerd CRS Rijksdriehoeksmeting (RD-stelsel (EPSG:28992)), waarmee men de x en y coördinaten kan duiden, en het Vertikaal CRS Normaal Amsterdams Peil (NAP (EPSG:5709)).
 
 De coördinaatgetallen zijn daarbij op millimeternauwkeurigheid met als eenheid meters. Het coördinaatgetal heeft maximaal drie cijfers achter de komma. <mark>(Waarom?!?! Onhandig met  vergelijkingen met omgevingen waar dit wel mag)</mark> Zo nodig wordt daarvoor afgerond,zodanig dat als het vierde cijfer achter de komma de waarde 1 t/m 4 bedraagt, het derde cijfer achter de komma niet wijzigt en als het vierde cijfer achter de komma de waarde 5 t/m 9 bedraagt, het derde cijfer achter de komma met één wordt
 verhoogd, met mogelijk ook implicaties voor de voorliggende cijfers, waarbij dezelfde regel geldt.
+<mark> Thomas Krijnen, Jochem Lesparre eens vragen (gedaan om schijnnauwkeurigheid te voorkomen) </mark>
 
-Het RDNAP-stelsel voldoet aan de eisen van de Europese richtlijn INSPIRE. Deze
-stelt dat binnen de Europese continentale aardschol, waartoe ook Nederland en
-het Nederlandse deel van de Noordzee behoort, geldt dat coördinaten herleidbaar
-moeten zijn tot het European Terrestrial Reference System 1989 (ETRS89) voor de
-horizontale en verticale component. 
+Het RDNAP-stelsel voldoet aan de eisen van de Europese richtlijn INSPIRE. Deze stelt dat binnen de Europese continentale aardschol, waartoe ook Nederland en het Nederlandse deel van de Noordzee behoort, geldt dat coördinaten herleidbaar moeten zijn tot het European Terrestrial Reference System 1989 (ETRS89) voor de
+horizontale en verticale component. <mark> Navragen bij Jochem/Lennard </mark>.
 
 ## Geometrietypen
 
@@ -55,6 +55,8 @@ Dit wordt in Imgeo-3D:
 |                                                             | Gecombineerd 3D blokmodel per verdieping boven maaiveld van BAG-pand met meerdere hoogte |               | LOD D.2* 3D Solid of 3D Compound Geometry (Solid met 3D Multisurface)       | 3D           | Optioneel per pand |
        
 <mark>Voor de beschrijving van geometrieën geldt het ISO 19107 Spatial Schema. Voor de uitwisseling wordt gebruik gemaakt van Geography Markup Language (GML) 3.1.1. </mark>
+
+<mark> Heeft bim model grondvlak niodg? </mark>
 
 In de LOD 0.1-serie van IMGeo-3D zijn de geometrieën gerepresenteerd met een TINsurface (traingulatedSurface) per object. Het LOD0 terrein wordt gevormd door een verzameling aangrenzende driehoeken waarin de objectgrenzen herkenbaar zijn (constrained TIN). Als gevolg hiervan zijn alleen platte vlakken en rechte lijnen toegestaan en dusgeen gekromde oppervlakten of cirkelbogen.
 
@@ -95,9 +97,6 @@ GM_Circle is niet toegestaan.
 
 IndoorJSON use JSON-FG-compatible geometry objects for the geometry representation. This is necessary because indoor spaces require 3D geometry, including solid geometry. The current IndoorJSON core schema references JSON-FG geometry schemas for geometry2D andgeometry3D, including Polygon and Polyhedron for CellSpace.
 
-</mark>
-<mark> Ook kijken naar 3DIM vraagt de TC om 3D Tiles 2.0 als Community Standard vast te stellen; ratificatie wordt in Q4 2026 verwacht. De tileset is nu zelf een glTF 2.1-bestand en ondersteunt nieuwe content zoals Gaussian splats, vector tiles, voxels en tijdsafhankelijke tiles. Japan presenteerde PLATEAU, waarin 195 organisaties 3D-stadsmodellen in CityGML als open data hebben gepubliceerd. </mark>
-
 ## Topologie in 3D 
 
 Alleen de grondvlaksituatie van objecten doet mee in de topologische structuur. 3D blokmodellen en objecten die virtuele ruimte zijn, doen, in tegenstelling tot alle objecten die Reeël object zijn én BGT-vlakobjecten, niet mee in de topologische structuur. Virtuele ruimte objecten liggen als een overlay over andere BGT-objecten. De begrenzing van virtuele ruimte hoeft niet samen te vallen met de begrenzing van reeële objecten.
@@ -114,7 +113,7 @@ Dat betekent dat:
 
 -   deze objecten elkaar niet mogen overlappen.
 
-Waar gaten op maaiveldniveau ontstaan, bijvoorbeeld bij tunnels, kan men een  ClosureSurface gebruiken. Op deze manier ontstaat een gesloten terreinmodel. Closure Surfaces worden niet opgenomen in IMGeo-3D op locaties waar footprint zijn opgenomen in het terrein. 
+Waar gaten op maaiveldniveau ontstaan, bijvoorbeeld bij tunnels, kan men een ClosureSurface gebruiken. Op deze manier ontstaat een gesloten terreinmodel. Closure Surfaces worden niet opgenomen in IMGeo-3D op locaties waar footprint zijn opgenomen in het terrein. 
 
 De LOD0.1 geometrieën van alle IMGeo vlakobjecten op hoogteniveau 0 te samen vormen een topologisch consistent geheel in 2.5D (geen gaten of overlap).
 
@@ -146,12 +145,9 @@ De Gegevenscatalogus BGT geeft aan dat in de regel open, bovengronds water nivea
 
 
 ## Hiërarchie in objecten en domeinwaarden
-<mark>
-BGT-objecten bezitten attributen die kenmerken van het object beschrijven. Welke
-waarde(n) de attributen kunnen of mogen hebben is vastgelegd in domeinwaarden.
+Het principe van hiërarchie in objecten en domeinwaarden geldt ook in 3D. 
 
-Voor drie zaken is het van belang om hiërarchie te hanteren bij BGT-objecten,
-domeinen en domeinwaarden, te weten:
+Voor drie zaken is het van belang om hiërarchie te hanteren voor domeinen en domeinwaarden, te weten:
 
 -   afbakenen van objecten;
 
@@ -159,35 +155,28 @@ domeinen en domeinwaarden, te weten:
 
 -   visualiseren.
 
-Voor de eerste twee punten geldt dat het object met de beste idealisatiewaarde
-(zie paragraaf 4.2) voorrang heeft boven een object met een minder goede waarde.
-Als objecten dezelfde idealisatiewaarde hebben, dan geldt de volgorde van de
-beschrijving van de objecten in hoofdstuk 8 en de volgorde van de domeinwaarden
-in hoofdstuk 9. Een eerder beschreven object of domeinwaarde heeft dan voorrang
-boven het daarna vermelde object of domein­waar­de.
+Een object met de beste idealisatiewaarde heeft voorrang boven een object met een minder goede waarde. Er dient een onderzoek te komen naar de 3D idealisatiewaarde van objecten. Deze zal voor 3D situaties anders kunnen zijn dan voor 2D situaties. 
 
-Voor het derde punt, de visualisatie van de BGT, gelden afwijkende regels. Deze
-regels zijn opgenomen in hoofdstuk 5 van het document Visualisatieregels BGT en
-IMGeo.
-</.mark>
+<mark> TODO: Idealisatiewaarden voor 3D onderzoeken en opnemen. </mark>
 
-<mark>
-De BGT stelt eisen aan de positionele nauwkeurigheid, waarmee een object wordt ingewonnen en vastgelegd. Onder positionele nauwkeurigheid verstaat men de mate waarin de opgeslagen coördinaten overeenkomen met de waarden in de werkelijkheid of de geaccepteerde afwijking. De positionele nauwkeurigheid in de BGT is de combinatie van precisie en betrouwbaarheid, ook wel geometrische nauwkeurigheid genoemd.
+<mark> Jochem vragen hoe dit zit </mark> 
 
-De positionele nauwkeurigheid van een object wordt beschreven op het niveau van het objecttype. Hiermee wordt aan elk object binnen dat objecttype een nauwkeurigheidseis gesteld. De BGT hanteert voor het beschrijven van de positionele nauwkeurigheid de relatieve precisie. Een uitgebreide theoretische beschrijving hiervan staat in het Handboek Technische Werkzaamheden van het Kadaster uit 1996 (HTW 1996). Bij de precisiebeschrijving wordt onderscheid gemaakt tussen de relatieve precisie van coördinaten ten gevolge van de ontstaanswijze (het meet-en verwerkingsproces) en de idealisatie. Toepassing van het meet- en verwerkingsproces levert de vereiste minimumwaarde op. Relatieve precisie geldt alleen voor nabijgelegen punten.
+Als objecten dezelfde idealisatiewaarde hebben, dan geldt de volgorde van de beschrijving van de objecten en daarna van domeinwaarden. Voor het derde punt, de visualisatie van de BGT, gelden afwijkende regels. Deze regels zijn opgenomen in hoofdstuk 5 van het document Visualisatieregels BGT en IMGeo. De hierarchie in tekenenen van ongelijkvloerse kruizingen verdwijnt in 3D. 
 
-Hieronder staan de waarden voor de minimale toegestane kwaliteit voor de positionele nauwkeurigheid van 30 en 60 cm. Het zijn afrondingen van de in de HTW 1996 vermelde waarden voor de lengte van de halve lange as van de relatieve standaardellips tussen twee punten in.
+## Identificatie en historie
 
-Objecten met een hoge positionele nauwkeurigheid: 20 cm x √2 = 28,3 cm, afgerond: 30 cm;
+### Identificatie
 
-Objecten met een lage positionele nauwkeurigheid: 40 cm x √2 = 56,6 cm, afgerond: 60 cm.
+De BGT-objectidentificatie (object-ID) blijft in 3D behouden en is niet anders dan het 2D-ID. 
 
-De punten in het veld dienen te zijn ingemeten en in het bestand te zijn verwerkt volgens de regels, zoals beschreven in de HTW van 1996, inclusief het supplement voor detailmeten met GPS.
+### Gebeurtenissen
 
-De tabel hieronder vermeldt de minimale waarden van de toegestane kwaliteit voor de positionele nauw­keu­rig­heid per objecttype. In de laatste kolom staan de waarden voor idealisatie per objecttype. Een bronhouder is volledig vrij om voor zijn eigen objecten hogere nauwkeurigheidseisen te hanteren dan voor de BGT zijn vereist.
+Blijft gelijk in 3D 
 
-Omdat de BGT bestaat uit een verzameling objecten wordt in de tabel per object een generieke waarde voor de maximaal toegestane afwijking vermeld tussen nabijgelegen punten met dezelfde idealisatiewaarden en van hetzelfde object.
+### Levensduur en historie 
 
+Blijft gelijk in 3D 
 
-DIT MOET ER UIT
-</mark>
+### Toekomstige topografie
+
+Blijft gelijk in 3D
