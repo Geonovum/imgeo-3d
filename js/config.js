@@ -152,6 +152,7 @@ let respecConfig = {
     date: "2026",
     href: "https://doi.org/10.5194/isprs-archives-XLVIII-3-W4-2025-55-2026"
   }
+ }
 };
 
 function localizeGitHubHeaderLinks(_config, document) {

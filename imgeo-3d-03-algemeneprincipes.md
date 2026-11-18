@@ -47,9 +47,9 @@ Dit wordt in Imgeo-3D:
 | *Object*                                                    | *BGT classificatie*            | *Plus classificatie*                       | *Geometrie*            |*Ruimte*          |*Verplicht/optioneel*      | 
 |-------------------------------------------------------------|--------------------------------|--------------------------------------------|------------------------|------------------|---------------------------|
 | *Bouwwerk*                                                  |                                |                                            |                        |                  |                          |
-| **Pand**                                                    | Grondvlaksituatie van BAG-pand |                                            | LOD 0.1 3D TriangulatedSurface    | 3D    |               Verplicht           |
-|                                                             | 3D blokmodel boven maaiveld van BAG-pand met 1 hoogte|                      | LOD 1.2 3D Solid met 2D grondvlak      | 3D             | Optioneel per set           |
-|                                                             | 3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte|               | LOD 1.3 3D Solid met 2D grondvlak      | 3D             | Optioneel per set           |
+| **Pand**                                                    | Grondvlaksituatie van BAG-pand |                                            | LOD 0.1 3D Grondvlak    | 3D    |               Verplicht           |
+|                                                             | 3D blokmodel boven maaiveld van BAG-pand met 1 hoogte|                      | LOD 1.2 3D Solid met horizontaal grondvlak      | 3D             | Optioneel per set           |
+|                                                             | 3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte|               | LOD 1.3 3D Solid met horizontaal grondvlak      | 3D             | Optioneel per set           |
 |                                                             | 3D blokmodel boven maaiveld van BAG-pand met meerdere hoogte|               | LOD 2.2 3D Solid       | 3D             |         Optioneel per set                   |
 |                                                             | Gecombineerd 3D blokmodel per verdieping boven maaiveld van BAG-pand met meerdere hoogte |               | LOD C.1* 3D Solid       | 3D           | Optioneel per pand |
 |                                                             | Gecombineerd 3D blokmodel per verdieping boven maaiveld van BAG-pand met meerdere hoogte |               | LOD D.2* 3D Solid of 3D Compound Geometry (Solid met 3D Multisurface)       | 3D           | Optioneel per pand |
@@ -58,7 +58,7 @@ Dit wordt in Imgeo-3D:
 
 <mark> Heeft bim model grondvlak niodg? </mark>
 
-In de LOD 0.1-serie van IMGeo-3D zijn de geometrieën gerepresenteerd met een TINsurface (traingulatedSurface) per object. Het LOD0 terrein wordt gevormd door een verzameling aangrenzende driehoeken waarin de objectgrenzen herkenbaar zijn (constrained TIN). Als gevolg hiervan zijn alleen platte vlakken en rechte lijnen toegestaan en dusgeen gekromde oppervlakten of cirkelbogen.
+In de LOD 0.1-serie van IMGeo-3D zijn de geometrieën gerepresenteerd met een triangulated surface per object. Het LOD0 terrein wordt gevormd door een verzameling aangrenzende driehoeken waarin de objectgrenzen herkenbaar zijn (constrained TIN). Als gevolg hiervan zijn alleen platte vlakken en rechte lijnen toegestaan en dusgeen gekromde oppervlakten of cirkelbogen.
 
 In de LOD 1-, LOD 2- en LOD 3-serie van IMGeo-3D wordt voor volumetrische geometrieën GM_Solid gebruikt. De begrenzing van deze solids wordt opgebouwd uit oppervlakken die gebruikmaken van de geometrieën die binnen het GML 3.1.1 Simple Features Profile v1.0 zijn toegestaan, aangevuld met cirkelbogen (GM_Arc).
 
@@ -159,7 +159,7 @@ Een object met de beste idealisatiewaarde heeft voorrang boven een object met ee
 
 <mark> TODO: Idealisatiewaarden voor 3D onderzoeken en opnemen. </mark>
 
-<mark> Jochem vragen hoe dit zit </mark> 
+<mark> Vraag kadaster vragen hoe dit zit </mark> 
 
 Als objecten dezelfde idealisatiewaarde hebben, dan geldt de volgorde van de beschrijving van de objecten en daarna van domeinwaarden. Voor het derde punt, de visualisatie van de BGT, gelden afwijkende regels. Deze regels zijn opgenomen in hoofdstuk 5 van het document Visualisatieregels BGT en IMGeo. De hierarchie in tekenenen van ongelijkvloerse kruizingen verdwijnt in 3D. 
 
@@ -171,12 +171,29 @@ De BGT-objectidentificatie (object-ID) blijft in 3D behouden en is niet anders d
 
 ### Gebeurtenissen
 
-Blijft gelijk in 3D 
+Geen wijzigingen t.o.v. de 2D beschrijving 
 
 ### Levensduur en historie 
 
-Blijft gelijk in 3D 
+Geen wijzigingen t.o.v. de 2D beschrijving 
 
 ### Toekomstige topografie
 
-Blijft gelijk in 3D
+Geen wijzigingen t.o.v. de 2D beschrijving 
+
+## Meetgegevens 
+De principes voor meetgegevens van de 2D beschrijving gelden hier ook.
+
+Aanvullend voor 3D geldt dat de geometrie het resultaat kan zijn van de combinatie van twee of meer onafhankelijke bronnen. Bijvoorbeeld: de x,y-ligging komt uit de 2D-registratie (BGT/BAG) en de z-waarde uit een hoogtebron zoals AHN. De kwaliteit van een 3D-plaatsbepalingspunt wordt daarom niet als één waarde vastgelegd, maar gesplitst in een horizontale en een verticale nauwkeurigheid. De horizontale nauwkeurigheid is gelijk aan die van het oorspronkelijke 2D-plaatsbepalingspunt. De verticale nauwkeurigheid wordt bepaald door de nauwkeurigheid van de hoogtebron, de doorwerking van de horizontale afwijking bij hellende vlakken en de afwijking die ontstaat door de gekozen afleidingsmethode (bijvoorbeeld extrusie naar één representatieve hoogte). Bij onafhankelijke bronnen worden deze afwijkingen kwadratisch gecombineerd. Naast de bestaande meetgegevens worden voor de z-waarde de hoogtebron, de inwinningsdatum van die bron en de afleidingsmethode vastgelegd, zodat de herkomst van de 3D-geometrie herleidbaar blijft.
+
+![Visualisatie van de berekende referentiehoogte gebaseerd op percentiel en de hoogte punten die gebruikt zijn in de calculatie.](./media/Beeldmateriaal/referentiehoogte_percentiel_en_hoogtepunten.png)
+bron: [A MULTI-HEIGHT LOD1 MODEL OF ALL BUILDINGS IN THE NETHERLANDS](https://isprs-annals.copernicus.org/articles/IV-4-W8/51/2019/) 
+
+![Gebruik van meerdere onafhankelijke bronnen bij het vormen van 3D](./media/Beeldmateriaal/vormen_van_3D_met_behulp_van_meerdere_bronnen.png)
+bron: Handreikingaanbesteding3dCityGML IMGeo 2.0
+
+## Plaatsbepalingspunt
+<mark> De plaatsbepalingspunten gelden ook in 3D. Voor de idealiseerbare objecten. </mark>
+
+<mark> Hoe om te gaan met plaatsbepalingspunten die het resultaat zijn van 2 of meer bronnen? De BGT-BAG en de AHN? </mark>
+
